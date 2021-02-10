@@ -1,0 +1,22 @@
+# Before running below commands replace placeholders with real values.
+# Replace <received> with received from AKSHI P12 file name.
+# Replace <new> with new desired P12 file name.
+# Replace <pass> with new desired password for P12 file.
+ 
+# Extract from wrong P12:
+openssl pkcs12 -in <received>.p12 -out <received>.crt -clcerts -nokeys
+openssl pkcs12 -in <received>.p12 -out <received>.key -nocerts -nodes
+
+# Create correct P12:
+copy <received>.key + <received>.crt all.pem
+openssl pkcs12 -export -in all.pem -out <new>.p12 -password pass:<pass>
+
+
+openssl pkcs12 -in tetra_solutions_new.p12 -out test.crt -clcerts -nokeys
+openssl pkcs12 -in tetra_solutions_new.p12 -out test.key -nocerts -nodes
+cat tetra.key tetra.crt > tetra.pem
+openssl pkcs12 -export -in tetra.pem -out tetraNew.p12 -password pass:123456
+
+pb = new ProcessBuilder(CommandLineUtil.openssl, "pkcs12", "-export", "-in",
+							"H:\\GenCer\\newOme1.crt", "-inkey", "H:\\GenCer\\newOme1.key", "-out",
+							"newCert.p12", "-password", "pass:123456");

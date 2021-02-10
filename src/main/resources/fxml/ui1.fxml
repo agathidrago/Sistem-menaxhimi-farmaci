@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="629.0" prefWidth="672.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx.FxmlController">
+   <children>
+      <Label fx:id="l1" alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="63.0" prefHeight="53.0" prefWidth="273.0" text="License">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tf1" alignment="CENTER" layoutX="101.0" layoutY="158.0" prefHeight="53.0" prefWidth="364.0" promptText="Motherboard ID" />
+      <TextField fx:id="tf2" alignment="CENTER" layoutX="112.0" layoutY="321.0" prefHeight="53.0" prefWidth="364.0" promptText="SerialNumberEncodedSpecific" />
+     
+      <Button fx:id="bt" layoutX="208.0" layoutY="408.0" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="199.0" text="Valido" />
+      <Button fx:id="gjID" layoutX="240.0" layoutY="243.0" mnemonicParsing="false" onAction="#gjenero" text="Gjenero ID" />
+   </children>
+</AnchorPane>

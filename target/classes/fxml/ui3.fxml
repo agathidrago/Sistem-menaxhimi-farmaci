@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="809.0" stylesheets="@./cssfilepath.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.FxmlController">
+   <children>
+      <Button fx:id="generate" layoutX="250.0" layoutY="67.0" mnemonicParsing="false" onAction="#gjenero" prefHeight="39.0" prefWidth="98.0" text="Gjenero" />
+      <Button fx:id="validate" layoutX="486.0" layoutY="67.0" mnemonicParsing="false" onAction="#login" prefHeight="39.0" prefWidth="98.0" text="Valido" />
+      <Pane layoutX="250.0" layoutY="123.0" prefHeight="321.0" prefWidth="334.0">
+         <children>
+            <Button fx:id="okid" layoutX="55.5" layoutY="202.0" mnemonicParsing="false" onAction="#setType" prefHeight="40.0" prefWidth="224.0" text="OK" />
+            <TextField fx:id="tf1" layoutX="55.5" layoutY="35.0" prefWidth="224.0" promptText="Serial Number" />
+            <TextField fx:id="tf2" editable="false" layoutX="55.5" layoutY="110.0" prefWidth="224.0" promptText="License Key" />
+            <Label fx:id="l1" alignment="CENTER" layoutX="55.5" layoutY="161.0" prefHeight="27.0" prefWidth="224.0" text="License" />
+            <Label fx:id="l2" alignment="CENTER" layoutX="55.5" layoutY="161.0" prefWidth="224.0" text="VALID" visible="false" />
+            <Label fx:id="l3" alignment="CENTER" layoutX="55.5" layoutY="161.0" prefWidth="224.0" text="NON VALID" visible="false" />
+         </children>
+      </Pane>
+      <Label fx:id="typeOfAction" layoutX="390.0" layoutY="22.0" prefWidth="60.0" text="Generate" />
+      <Button fx:id="copy" layoutX="551.0" layoutY="234.0" mnemonicParsing="false" visible="false" onAction="#copyCode" text="Copy" />
+   </children>
+</Pane>
