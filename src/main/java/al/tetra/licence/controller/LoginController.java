@@ -9,7 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import al.tetra.licence.entity.Perdorues;
-import al.tetra.licence.service.PerdoresService;
+import al.tetra.licence.service.LogInService;
+import al.tetra.licence.service.PerdoruesService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -35,7 +36,7 @@ import net.rgielen.fxweaver.core.FxmlView;
 @FxmlView("/fxml/login.fxml")
 public class LoginController implements Initializable {
 	@Autowired
-	private PerdoresService perdoruesService;
+	private LogInService logInService;
 
 	@FXML
 	private BorderPane borderPaneLogin;
@@ -59,6 +60,8 @@ public class LoginController implements Initializable {
 	private PasswordField passwordTextField;
 	@FXML
 	private Button autentifikohuButton;
+	
+	Stage stage1=null;
 
 	@Override
 	@FXML
@@ -76,7 +79,7 @@ public class LoginController implements Initializable {
 		String password = passwordTextField.getText();
 	/*	System.err.println(username);
 		System.err.println(password);*/
-		Perdorues perdorues = perdoruesService.autentifikoPerdorues(username, password);
+		Perdorues perdorues = logInService.autentifikoPerdorues(username, password);
 		//System.err.println(perdorues.toString());
 		if (perdorues != null) {
 			messageLabel.setText("Useri u autentifikua me sukses !");
@@ -94,10 +97,12 @@ public class LoginController implements Initializable {
 
 	@FXML
 	public void closeLogInStage() throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
+		/*Parent root = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage1 = new Stage();
-		stage1.setScene(scene);
+		stage1.setScene(scene);*/
+		stage1=(Stage)autentifikohuButton.getScene().getWindow();
+		stage1.close();
 
 		Parent main = FXMLLoader.load(getClass().getResource("/fxml/editPerdorues.fxml"));
 		Scene sceneMain = new Scene(main);
@@ -111,9 +116,9 @@ public class LoginController implements Initializable {
 		stage.show();
 
 		
-		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
+		/*scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
 		stage1.close();
-
+*/
 		/*stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
 
 			@Override

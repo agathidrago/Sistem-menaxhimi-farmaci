@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import al.tetra.licence.entity.Perdorues;
-import al.tetra.licence.service.PerdoresService;
+import al.tetra.licence.service.PerdoruesService;
 import antlr.StringUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,7 +28,7 @@ import net.rgielen.fxweaver.core.FxmlView;
 @FxmlView("/fxml/editPerdorues.fxml")
 public class PerdoruesController {
 	@Autowired
-	private PerdoresService perdoruesService;
+	private PerdoruesService perdoruesService;
 	@FXML
 	private MenuBar menuBar;
 	@FXML
@@ -57,38 +57,16 @@ public class PerdoruesController {
 	private Button changePassButton2;
 	@FXML
 	private Label messageLabel;
-
+	
 	@FXML
 	public void updatePerdorues(ActionEvent event) {
-		String username = null;
-		String emer = null;
-		String email = null;
-		if (usernameField != null) {
-			username = usernameField.getText();
-		} else {
-			username = perdoruesService.getPerodruesTeLoguar().getUsername();
-		}
-		if (emerField != null) {
-			emer = emerField.getText();
-		} else {
-			emer = perdoruesService.getPerodruesTeLoguar().getEmer();
-		}
-		if (emailField != null) {
-			email = emailField.getText();
-		} else {
-			email = perdoruesService.getPerodruesTeLoguar().getEmail();
-			System.err.println("email"+email);
-		}
-		try {
-			
-			Perdorues perdorues = perdoruesService.updatePerdorues(emer, email, username,
-					perdoruesService.getPerodruesTeLoguar().getId());
-			messageLabel.setText("Useri u update-ua me sukses !");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
+		System.err.println("hyri");
+		Perdorues p= perdoruesService.updatePerdorues(emerField.getText(), emailField.getText(), usernameField.getText(),new Long(1), new Long(1));
+		System.err.println(p.toString());
+		
+		
 	}
 
+
+	
 }
