@@ -1,5 +1,7 @@
 package al.tetra.licence.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,9 +21,11 @@ public class Perdorues {
 	
 	private String emer;
 	private String email;
-	private String username;
-	private String password;
+	private String adresa;
+	private String gjinia;
+	private Date datelindja;
 	private String roli;
+	private String password;
 	public Long getId() {
 		return id;
 	}
@@ -40,17 +44,23 @@ public class Perdorues {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getUsername() {
-		return username;
+	public String getAdresa() {
+		return adresa;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setAdresa(String adresa) {
+		this.adresa = adresa;
 	}
-	public String getPassword() {
-		return password;
+	public String getGjinia() {
+		return gjinia;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setGjinia(String gjinia) {
+		this.gjinia = gjinia;
+	}
+	public Date getDatelindja() {
+		return datelindja;
+	}
+	public void setDatelindja(Date datelindja) {
+		this.datelindja = datelindja;
 	}
 	public String getRoli() {
 		return roli;
@@ -58,11 +68,16 @@ public class Perdorues {
 	public void setRoli(String roli) {
 		this.roli = roli;
 	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	@Override
 	public String toString() {
-		return "Perdorues [id=" + id + ", emer=" + emer + ", email=" + email + ", username=" + username + ", password="
-				+ password + ", roli=" + roli + "]";
+		return "Perdorues [id=" + id + ", emer=" + emer + ", email=" + email + ", adresa=" + adresa + ", gjinia="
+				+ gjinia + ", datelindja=" + datelindja + ", roli=" + roli + ", password=" + password + "]";
 	}
-	
 	
 }
