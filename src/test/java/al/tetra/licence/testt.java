@@ -24,6 +24,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.PasswordService;
 import al.tetra.licence.util.CommandLineUtil;
 
@@ -122,15 +123,17 @@ public class testt {
 	}
 */
 	
-/*@Test
+@Test
 	@Transactional
 	public void addUser() {
 		try {
-		System.err.println(entityManager.createQuery("select sh from Shteti sh where id=1",Shteti.class).getSingleResult());
+		System.err.println(entityManager
+				.createQuery("select p from Perdorues p where id=1",
+						Perdorues.class).getSingleResult().toString());
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 		
-	}*/
+	}
 }

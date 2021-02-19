@@ -1,67 +1,128 @@
 package al.tetra.licence.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
-@Table(name = "ilace" )
+@Table(name = "ilace")
 public class Ilace {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ilace_id_seq")
 	@SequenceGenerator(name = "ilace_id_seq", sequenceName = "farmaci.ilace_id_seq", allocationSize = 1)
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
-	
+
 	private String emer;
-	private int sasia;
-	private float cmim_blerje;
-	private float cmim_shitje;
-	private String furnitor;
+	private String sasia;
+	@Column(name = "cmim_blerje")
+	private double cmimBlerje;
+	@Column(name = "cmim_shitje")
+	private double cmimShitje;
+	private Date date_furnizimi;
+	private double madhesia;
+	@Column(name = "vetem_me_recete")
+	private boolean vetemMeRecete;
+
+	@JsonBackReference
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "receteIlac", referencedColumnName = "id")
+	private ReceteIlac receteIlac;
+
+	@JsonBackReference
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "semundjeIlac", referencedColumnName = "id")
+	private SemundjeIlac semundjeIlac;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getEmer() {
 		return emer;
 	}
+
 	public void setEmer(String emer) {
 		this.emer = emer;
 	}
-	public int getSasia() {
+
+	public String getSasia() {
 		return sasia;
 	}
-	public void setSasia(int sasia) {
+
+	public void setSasia(String sasia) {
 		this.sasia = sasia;
 	}
-	public float getCmim_blerje() {
-		return cmim_blerje;
+
+	public double getCmimBlerje() {
+		return cmimBlerje;
 	}
-	public void setCmim_blerje(float cmim_blerje) {
-		this.cmim_blerje = cmim_blerje;
+
+	public void setCmimBlerje(double cmimBlerje) {
+		this.cmimBlerje = cmimBlerje;
 	}
-	public float getCmim_shitje() {
-		return cmim_shitje;
+
+	public double getCmimShitje() {
+		return cmimShitje;
 	}
-	public void setCmim_shitje(float cmim_shitje) {
-		this.cmim_shitje = cmim_shitje;
+
+	public void setCmimShitje(double cmimShitje) {
+		this.cmimShitje = cmimShitje;
 	}
-	public String getFurnitor() {
-		return furnitor;
+
+	public Date getDate_furnizimi() {
+		return date_furnizimi;
 	}
-	public void setFurnitor(String furnitor) {
-		this.furnitor = furnitor;
+
+	public void setDate_furnizimi(Date date_furnizimi) {
+		this.date_furnizimi = date_furnizimi;
 	}
-	@Override
-	public String toString() {
-		return "Ilace [id=" + id + ", emer=" + emer + ", sasia=" + sasia + ", cmim_blerje=" + cmim_blerje
-				+ ", cmim_shitje=" + cmim_shitje + ", furnitor=" + furnitor + "]";
+
+	public double getMadhesia() {
+		return madhesia;
 	}
-	
+
+	public void setMadhesia(double madhesia) {
+		this.madhesia = madhesia;
+	}
+
+	public boolean isVetemMeRecete() {
+		return vetemMeRecete;
+	}
+
+	public void setVetemMeRecete(boolean vetemMeRecete) {
+		this.vetemMeRecete = vetemMeRecete;
+	}
+
+	public ReceteIlac getReceteIlac() {
+		return receteIlac;
+	}
+
+	public void setReceteIlac(ReceteIlac receteIlac) {
+		this.receteIlac = receteIlac;
+	}
+
+	public SemundjeIlac getSemundjeIlac() {
+		return semundjeIlac;
+	}
+
+	public void setSemundjeIlac(SemundjeIlac semundjeIlac) {
+		this.semundjeIlac = semundjeIlac;
+	}
+
 }

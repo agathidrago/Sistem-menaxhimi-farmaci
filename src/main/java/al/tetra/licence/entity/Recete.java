@@ -1,69 +1,64 @@
 package al.tetra.licence.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
-@Table(name = "recete" )
+@Table(name = "recete")
 public class Recete {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "recete_id_seq")
 	@SequenceGenerator(name = "recete_id_seq", sequenceName = "farmaci.recete_id_seq", allocationSize = 1)
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 	
-	private Date data_leshimit;
-	private boolean date_leshimi;
-	private int ilace;
-	private int mjeku;
-	private int pacienti;
+	private int mjek;
+	@Column(name = "date_leshimi")
+	private Date dateLeshimi;
+	
+	@JsonBackReference
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "recete", referencedColumnName = "id")
+	private ReceteIlac recete;
+	
 	public Long getId() {
 		return id;
 	}
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Date getData_leshimit() {
-		return data_leshimit;
+	public int getMjek() {
+		return mjek;
 	}
-	public void setData_leshimit(Date data_leshimit) {
-		this.data_leshimit = data_leshimit;
+	public void setMjek(int mjek) {
+		this.mjek = mjek;
 	}
-	public boolean isDate_leshimi() {
-		return date_leshimi;
+	public Date getDateLeshimi() {
+		return dateLeshimi;
 	}
-	public void setDate_leshimi(boolean date_leshimi) {
-		this.date_leshimi = date_leshimi;
+	public void setDateLeshimi(Date dateLeshimi) {
+		this.dateLeshimi = dateLeshimi;
 	}
-	public int getIlace() {
-		return ilace;
+	public ReceteIlac getRecete() {
+		return recete;
 	}
-	public void setIlace(int ilace) {
-		this.ilace = ilace;
-	}
-	public int getMjeku() {
-		return mjeku;
-	}
-	public void setMjeku(int mjeku) {
-		this.mjeku = mjeku;
-	}
-	public int getPacienti() {
-		return pacienti;
-	}
-	public void setPacienti(int pacienti) {
-		this.pacienti = pacienti;
-	}
-	@Override
-	public String toString() {
-		return "Recete [id=" + id + ", data_leshimit=" + data_leshimit + ", date_leshimi=" + date_leshimi + ", ilace="
-				+ ilace + ", mjeku=" + mjeku + ", pacienti=" + pacienti + "]";
+	public void setRecete(ReceteIlac recete) {
+		this.recete = recete;
 	}
 	
+	
+
 }

@@ -12,7 +12,7 @@
 
 <BorderPane fx:id="borderPaneLogin" prefHeight="400.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.controller.LoginController">
    <left>
-      <AnchorPane fx:id="anchorPaneLeft" prefHeight="400.0" prefWidth="242.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="anchorPaneLeft" prefHeight="400.0" prefWidth="242.0" style="-fx-background-color: #c9ebf5;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="logInImage" fitHeight="184.0" fitWidth="414.0" layoutY="86.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -23,26 +23,26 @@
       </AnchorPane>
    </left>
    <right>
-      <AnchorPane fx:id="anchorPaneRight" prefHeight="400.0" prefWidth="378.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="anchorPaneRight" prefHeight="400.0" prefWidth="400.0" style="-fx-background-color: #c9ebf5;" BorderPane.alignment="CENTER">
          <children>
-            <Label fx:id="logInLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="63.0" prefHeight="44.0" prefWidth="192.0" text=" LOGIN" textFill="#f7df28">
+            <Label fx:id="logInLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="75.0" layoutY="63.0" prefHeight="44.0" prefWidth="192.0" text=" LOGIN" textFill="#2a43f5">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="14.0" layoutY="138.0" prefHeight="26.0" prefWidth="117.0" text="Username:">
+            <Label fx:id="usernameLabel" alignment="CENTER" layoutX="14.0" layoutY="138.0" prefHeight="26.0" prefWidth="117.0" text="Username:" textFill="#1031a8">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
             <TextField fx:id="usernameTextField" layoutX="140.0" layoutY="139.0" prefHeight="25.0" prefWidth="187.0" promptText="Username" />
-            <Label fx:id="passwordLabel" alignment="CENTER" layoutX="25.0" layoutY="211.0" prefHeight="17.0" prefWidth="99.0" text="Password:">
+            <Label fx:id="passwordLabel" alignment="CENTER" layoutX="25.0" layoutY="211.0" prefHeight="17.0" prefWidth="99.0" text="Password:" textFill="#1229d7">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
             <PasswordField fx:id="passwordTextField" layoutX="141.0" layoutY="207.0" prefHeight="25.0" prefWidth="188.0" promptText="Password" />
-            <Button fx:id="autentifikohuButton" layoutX="106.0" layoutY="264.0" mnemonicParsing="false" onAction="#autentifikoPerdorues" prefHeight="25.0" prefWidth="130.0" text="Autentifikohu" textFill="#f8e027">
+            <Button fx:id="autentifikohuButton" layoutX="106.0" layoutY="264.0" mnemonicParsing="false" onAction="#autentifikoPerdorues" prefHeight="25.0" prefWidth="130.0" text="Autentifikohu" textFill="#284ff7">
                <font>
                   <Font size="15.0" />
                </font>

@@ -1,6 +1,6 @@
 package al.tetra.licence.entity;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,21 +11,25 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "perdorues" )
+@Table(name = "perdorues")
 public class Perdorues {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "perdorues_id_seq")
 	@SequenceGenerator(name = "perdorues_id_seq", sequenceName = "farmaci.perdorues_id_seq", allocationSize = 1)
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
-	
+
 	private String emer;
+	private String mbiemer;
 	private String email;
 	private String adresa;
 	private String gjinia;
 	private Date datelindja;
+	private String username;
+	private String fjalekalim;
 	private String roli;
-	private String password;
+	@Column(name = "eshte_loguar")
+	private int eshteLoguar;
 	public Long getId() {
 		return id;
 	}
@@ -37,6 +41,12 @@ public class Perdorues {
 	}
 	public void setEmer(String emer) {
 		this.emer = emer;
+	}
+	public String getMbiemer() {
+		return mbiemer;
+	}
+	public void setMbiemer(String mbiemer) {
+		this.mbiemer = mbiemer;
 	}
 	public String getEmail() {
 		return email;
@@ -62,22 +72,39 @@ public class Perdorues {
 	public void setDatelindja(Date datelindja) {
 		this.datelindja = datelindja;
 	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getFjalekalim() {
+		return fjalekalim;
+	}
+	public void setFjalekalim(String fjalekalim) {
+		this.fjalekalim = fjalekalim;
+	}
 	public String getRoli() {
 		return roli;
 	}
 	public void setRoli(String roli) {
 		this.roli = roli;
 	}
-	public String getPassword() {
-		return password;
+	public int getEshteLoguar() {
+		return eshteLoguar;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setEshteLoguar(int eshteLoguar) {
+		this.eshteLoguar = eshteLoguar;
 	}
 	@Override
 	public String toString() {
-		return "Perdorues [id=" + id + ", emer=" + emer + ", email=" + email + ", adresa=" + adresa + ", gjinia="
-				+ gjinia + ", datelindja=" + datelindja + ", roli=" + roli + ", password=" + password + "]";
+		return "Perdorues [id=" + id + ", emer=" + emer + ", mbiemer=" + mbiemer + ", email=" + email + ", adresa="
+				+ adresa + ", gjinia=" + gjinia + ", datelindja=" + datelindja + ", username=" + username
+				+ ", fjalekalim=" + fjalekalim + ", roli=" + roli + ", eshteLoguar=" + eshteLoguar + "]";
 	}
+	
+	
+	
+	
 	
 }
