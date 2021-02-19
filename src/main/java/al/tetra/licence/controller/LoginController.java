@@ -74,7 +74,10 @@ public class LoginController implements Initializable {
 
 		String username = usernameTextField.getText();
 		String password = passwordTextField.getText();
+	/*	System.err.println(username);
+		System.err.println(password);*/
 		Perdorues perdorues = perdoruesService.autentifikoPerdorues(username, password);
+		//System.err.println(perdorues.toString());
 		if (perdorues != null) {
 			messageLabel.setText("Useri u autentifikua me sukses !");
 			try {
@@ -96,7 +99,7 @@ public class LoginController implements Initializable {
 		Stage stage1 = new Stage();
 		stage1.setScene(scene);
 
-		Parent main = FXMLLoader.load(getClass().getResource("/fxml/main.fxml"));
+		Parent main = FXMLLoader.load(getClass().getResource("/fxml/editPerdorues.fxml"));
 		Scene sceneMain = new Scene(main);
 		Stage stage = new Stage();
 		
