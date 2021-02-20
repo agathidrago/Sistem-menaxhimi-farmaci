@@ -84,8 +84,6 @@ public class LeshoReceteController implements Initializable {
 	@FXML
 	private Label messageLabel;
 	@FXML
-	private TextArea ilaceTextArea;
-	@FXML
 	private Label mjekuLabel;
 	@FXML
 	private TextField emerPacientiTextField;
