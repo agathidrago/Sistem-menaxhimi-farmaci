@@ -8,10 +8,10 @@ import java.util.ResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sun.glass.ui.MenuBar;
+
 
 import al.tetra.licence.entity.Perdorues;
-import al.tetra.licence.service.PerdoresService;
+import al.tetra.licence.service.PerdoruesService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +21,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -36,9 +37,9 @@ import net.rgielen.fxweaver.core.FxmlView;
 
 @Component
 @FxmlView("/fxml/shtoKarteleTeRe.fxml")
-public class ShtoKarteleTeRe implements Initializable{
+public class ShtoKarteleTeReController implements Initializable{
 	@Autowired
-	private PerdoresService perdoruesService;
+	private PerdoruesService perdoruesService;
 	
 	@FXML
 	private MenuBar menuShtoKarteleTeRe;
@@ -70,11 +71,11 @@ public class ShtoKarteleTeRe implements Initializable{
 	private Button ruajButton;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		File file = new File("C:/Users/CRS/Desktop/doctor-clinic.jpg");
-		Image image = new Image(file.getPath(), 160, 160, false, true);
+		File file = new File("/images/doctor-clinic.jpg");
+		Image image = new Image(file.getPath(), 200, 160, false, true);
 		imageShtoKarteleTeRe.setImage(image);
 	}
-	@FXML
+	/*@FXML
 	public void closeShikoKartele() throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/shtoKarteleTeRe.fxml"));
 		Scene scene = new Scene(root);
@@ -93,5 +94,5 @@ public class ShtoKarteleTeRe implements Initializable{
 		stage.show();
 		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
 		stage1.close();
-	}
+	}*/
 }

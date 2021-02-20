@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import al.tetra.licence.entity.Perdorues;
-import al.tetra.licence.service.LogInService;
 import al.tetra.licence.service.PerdoruesService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -36,7 +35,7 @@ import net.rgielen.fxweaver.core.FxmlView;
 @FxmlView("/fxml/login.fxml")
 public class LoginController implements Initializable {
 	@Autowired
-	private LogInService logInService;
+	private PerdoruesService perdoruesService;
 
 	@FXML
 	private BorderPane borderPaneLogin;
@@ -79,7 +78,7 @@ public class LoginController implements Initializable {
 		String password = passwordTextField.getText();
 	/*	System.err.println(username);
 		System.err.println(password);*/
-		Perdorues perdorues = logInService.autentifikoPerdorues(username, password);
+		Perdorues perdorues = perdoruesService.autentifikoPerdorues(username, password);
 		//System.err.println(perdorues.toString());
 		if (perdorues != null) {
 			messageLabel.setText("Useri u autentifikua me sukses !");

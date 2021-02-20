@@ -24,13 +24,15 @@ public class SemundjePacient {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 
-	@JsonManagedReference
+	/*@JsonManagedReference
 	@OneToMany(mappedBy = "semundjeP", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-	private List<Semundje> semundjeP;
+	private List<Semundje> semundjeP;*/
+	private int semundje;
 
-	@JsonManagedReference
+	/*@JsonManagedReference
 	@OneToMany(mappedBy = "pacient", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Pacient> pacient;
+	private List<Pacient> pacient;*/
+	private int pacient;
 
 	public Long getId() {
 		return id;
@@ -40,19 +42,19 @@ public class SemundjePacient {
 		this.id = id;
 	}
 
-	public List<Semundje> getSemundjeP() {
-		return semundjeP;
+	public int getSemundje() {
+		return semundje;
 	}
 
-	public void setSemundjeP(List<Semundje> semundjeP) {
-		this.semundjeP = semundjeP;
+	public void setSemundjeP(int semundje) {
+		this.semundje = semundje;
 	}
 
-	public List<Pacient> getPacient() {
+	public int getPacient() {
 		return pacient;
 	}
 
-	public void setPacient(List<Pacient> pacient) {
+	public void setPacient(int pacient) {
 		this.pacient = pacient;
 	}
 

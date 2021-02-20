@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import com.sun.glass.ui.MenuBar;
 
 import al.tetra.licence.entity.Perdorues;
-import al.tetra.licence.service.PerdoresService;
+import al.tetra.licence.service.PerdoruesService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,7 +39,7 @@ import net.rgielen.fxweaver.core.FxmlView;
 
 public class ShikoKarteleController implements Initializable {
 	@Autowired
-	private PerdoresService perdoruesService;
+	private PerdoruesService perdoruesService;
 	
 	@FXML
 	private MenuBar menuShikoKartele;

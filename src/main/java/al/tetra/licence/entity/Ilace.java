@@ -25,7 +25,7 @@ public class Ilace {
 	private Long id;
 
 	private String emer;
-	private String sasia;
+	private double sasia;
 	@Column(name = "cmim_blerje")
 	private double cmimBlerje;
 	@Column(name = "cmim_shitje")
@@ -35,7 +35,7 @@ public class Ilace {
 	@Column(name = "vetem_me_recete")
 	private boolean vetemMeRecete;
 
-	@JsonBackReference
+	/*@JsonBackReference
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "receteIlac", referencedColumnName = "id")
 	private ReceteIlac receteIlac;
@@ -44,7 +44,7 @@ public class Ilace {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "semundjeIlac", referencedColumnName = "id")
 	private SemundjeIlac semundjeIlac;
-
+*/
 	public Long getId() {
 		return id;
 	}
@@ -61,11 +61,11 @@ public class Ilace {
 		this.emer = emer;
 	}
 
-	public String getSasia() {
+	public double getSasia() {
 		return sasia;
 	}
 
-	public void setSasia(String sasia) {
+	public void setSasia(double sasia) {
 		this.sasia = sasia;
 	}
 
@@ -109,7 +109,7 @@ public class Ilace {
 		this.vetemMeRecete = vetemMeRecete;
 	}
 
-	public ReceteIlac getReceteIlac() {
+	/*public ReceteIlac getReceteIlac() {
 		return receteIlac;
 	}
 
@@ -123,6 +123,6 @@ public class Ilace {
 
 	public void setSemundjeIlac(SemundjeIlac semundjeIlac) {
 		this.semundjeIlac = semundjeIlac;
-	}
+	}*/
 
 }
