@@ -71,7 +71,11 @@
                   <Font size="17.0" />
                </font>
             </Button>
+<<<<<<< HEAD
+            <Label id="teDhenatEKartelesSePacientitLabel" fx:id="teDhenatEKartelesSePacientitLabel" layoutX="32.0" layoutY="84.0" style="-fx-background-color: #FFE4C4;" text="Te dhenat e karteles se pacientit">
+=======
             <Label id="teDhenatEKartelesSePacientitLabel" fx:id="teDhenatEKartelesSePacientitLabel" layoutX="40.0" layoutY="81.0" style="-fx-background-color: #FFE4C4;" text="Te dhenat e karteles se pacientit">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>

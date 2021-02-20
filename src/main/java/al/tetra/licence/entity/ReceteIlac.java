@@ -25,13 +25,19 @@ public class ReceteIlac {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 	
-	@JsonManagedReference
+	/*@JsonManagedReference
 	@OneToMany(mappedBy = "recete", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-	private List<Recete> recete;
+	private List<Recete> recete;*/
+	/*@JsonManagedReference
+	@OneToMany(mappedBy = "recete", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)*/
+	private int recete;
 	
-	@JsonManagedReference
+	/*@JsonManagedReference
 	@OneToMany(mappedBy = "receteIlac", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Ilace> ilac;
+	private List<Ilace> ilac;*/
+	/*@JsonManagedReference
+	@OneToMany(mappedBy = "receteIlac", cascade = CascadeType.ALL, orphanRemoval = true)*/
+	private int ilac;
 
 	public Long getId() {
 		return id;
@@ -41,19 +47,26 @@ public class ReceteIlac {
 		this.id = id;
 	}
 
-	public List<Recete> getRecete() {
+	public int getRecete() {
 		return recete;
 	}
 
-	public void setRecete(List<Recete> recete) {
+	public void setRecete(int recete) {
 		this.recete = recete;
 	}
 
-	public List<Ilace> getIlac() {
+	/*public List<Ilace> getIlac() {
 		return ilac;
 	}
 
 	public void setIlac(List<Ilace> ilac) {
+		this.ilac = ilac;
+	}*/
+	public int getIlac() {
+		return ilac;
+	}
+
+	public void setIlac(int ilac) {
 		this.ilac = ilac;
 	}
 

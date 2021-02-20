@@ -25,13 +25,15 @@ public class SemundjeIlac {
 	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
 
-	@JsonManagedReference
+	/*@JsonManagedReference
 	@OneToMany(mappedBy = "semundjeI", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
-	private List<Semundje> semundjeI;
-
-	@JsonManagedReference
+	private List<Semundje> semundjeI;*/
+	private int semundje;
+	/*@JsonManagedReference
 	@OneToMany(mappedBy = "semundjeIlac", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Ilace> ilac;
+	private List<Ilace> ilac;*/
+	private int ilac;
+
 
 	public Long getId() {
 		return id;
@@ -41,19 +43,19 @@ public class SemundjeIlac {
 		this.id = id;
 	}
 
-	public List<Semundje> getSemundje() {
-		return semundjeI;
+	public int getSemundje() {
+		return semundje;
 	}
 
-	public void setSemundje(List<Semundje> semundjeI) {
-		this.semundjeI = semundjeI;
+	public void setSemundje(int semundje) {
+		this.semundje = semundje;
 	}
 
-	public List<Ilace> getIlac() {
+	public int getIlac() {
 		return ilac;
 	}
 
-	public void setIlac(List<Ilace> ilac) {
+	public void setIlac(int ilac) {
 		this.ilac = ilac;
 	}
 	

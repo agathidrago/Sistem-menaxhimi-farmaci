@@ -28,11 +28,12 @@ public class Recete {
 	private int mjek;
 	@Column(name = "date_leshimi")
 	private Date dateLeshimi;
-	
-	@JsonBackReference
+	@Column(name = "emer_pacienti")
+	private String pacienti;
+	/*@JsonBackReference
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "recete", referencedColumnName = "id")
-	private ReceteIlac recete;
+	private ReceteIlac recete;*/
 	
 	public Long getId() {
 		return id;
@@ -52,12 +53,19 @@ public class Recete {
 	public void setDateLeshimi(Date dateLeshimi) {
 		this.dateLeshimi = dateLeshimi;
 	}
-	public ReceteIlac getRecete() {
+	/*public ReceteIlac getRecete() {
 		return recete;
 	}
 	public void setRecete(ReceteIlac recete) {
 		this.recete = recete;
+	}*/
+	public String getPacienti() {
+		return pacienti;
 	}
+	public void setPacienti(String pacienti) {
+		this.pacienti = pacienti;
+	}
+	
 	
 	
 

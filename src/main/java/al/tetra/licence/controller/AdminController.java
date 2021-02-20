@@ -8,11 +8,9 @@ import java.util.ResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sun.glass.ui.MenuBar;
-import com.sun.glass.ui.MenuItem;
 
 import al.tetra.licence.entity.Perdorues;
-import al.tetra.licence.service.PerdoresService;
+import al.tetra.licence.service.PerdoruesService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,7 +20,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -41,7 +41,7 @@ import net.rgielen.fxweaver.core.FxmlView;
 @FxmlView("/fxml/admin.fxml")
 public class AdminController implements Initializable {
 	@Autowired
-	private PerdoresService perdoruesService;
+	private PerdoruesService perdoruesService;
 	@FXML
 	private Pane adminPane;
 	@FXML
@@ -51,15 +51,15 @@ public class AdminController implements Initializable {
 	@FXML
 	private Label firstNameLabel;
 	@FXML
-	private TextField firstNameTextField;
+	private TextField emerTextField;
 	@FXML
 	private Label lastNameLabel;
 	@FXML
-	private TextField lastNameTextField;
+	private TextField mbiemerTextField;
 	@FXML
 	private Label mobileLabel;
 	@FXML
-	private TextField mobileNumberTextField;
+	private TextField telefonTextField;
 	@FXML
 	private Label emailLabel;
 	@FXML
@@ -71,9 +71,9 @@ public class AdminController implements Initializable {
 	@FXML
 	private Label genderLabel;
 	@FXML
-	private RadioButton genderMaleRadioButton;
+	private RadioButton gjiniaMashkullRadioButton;
 	@FXML
-	private RadioButton genderFemaleRadioButton;
+	private RadioButton gjiniaFemerRadioButton;
 	@FXML
 	private Label usernameLabel;
 	@FXML
@@ -85,23 +85,25 @@ public class AdminController implements Initializable {
 	@FXML
 	private Label confirmPaswwordLabel;
 	@FXML
-	private PasswordField confirmPasswordField;
+	private Label messageLabel;
+	@FXML
+	private PasswordField confirmPasswordTextField;	
+	@FXML
+	private TextField roliTextField;
 	@FXML
 	private Button registerButton;
-	@FXML
-	private Button cancelButton;
 	@FXML
 	private ImageView imageAdmin;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		File file = new File("C:/Users/CRS/Desktop/doctor-clinic.jpg");
-		Image image = new Image(file.getPath(), 160, 160, false, true);
+		File file = new File("/images/doctor-clinic.jpg");
+		Image image = new Image(file.getPath(), 200, 160, false, true);
 		imageAdmin.setImage(image);
 
 	}
 
-	@FXML
+/*	@FXML
 	public void closeAdminPage() throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/fxml/admin.fxml"));
 		Scene scene = new Scene(root);
@@ -122,5 +124,23 @@ public class AdminController implements Initializable {
 		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
 		stage1.close();
 
+	}*/
+	
+	@FXML
+	public void shtoPerdorues(ActionEvent event) {
+		System.err.println("hyri");
+		RadioButton selected=null;
+		if(gjiniaFemerRadioButton.isSelected()) {
+			selected=gjiniaFemerRadioButton;
+		}else {
+			selected=gjiniaMashkullRadioButton;
+		}
+		Perdorues p= perdoruesService.shtoPerdoruesTeRi(emerTextField.getText(), mbiemerTextField.getText(), roliTextField.getText(), telefonTextField.getText(), emailTextField.getText(), addressTextField.getText(), selected.getText(), usernameTextField.getText(), passwordField.getText(),confirmPasswordTextField.getText(),messageLabel);
+		if(p!=null) {
+			messageLabel.setText("Useri u krijua me sukses");
+			registerButton.setDisable(true);	
+		}
+		
+		
 	}
 }

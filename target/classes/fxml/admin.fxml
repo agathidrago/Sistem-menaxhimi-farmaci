@@ -16,48 +16,48 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.controller.AdminController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.controller.AdminController">
    <children>
       <Pane id="adminPane" fx:id="adminPane" prefHeight="561.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;">
          <children>
-            <Label id="firstNameLabel" fx:id="firstNameLabel" layoutX="269.0" layoutY="54.0" text="Emri" textFill="#003dff">
+            <Label id="firstNameLabel" fx:id="firstNameLabel" layoutX="266.0" layoutY="53.0" prefHeight="17.0" prefWidth="54.0" text="Emri" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <TextField id="firstNameTextField" fx:id="firstNameTextField" layoutX="405.0" layoutY="50.0" promptText="Vendosni Emrin" />
-            <Label id="lastNameLabel" fx:id="lastNameLabel" layoutX="270.0" layoutY="96.0" text="Mbiemri" textFill="#003dff">
+            <TextField id="firstNameTextField" fx:id="emerTextField" layoutX="405.0" layoutY="49.0" promptText="Vendosni Emrin" />
+            <Label id="lastNameLabel" fx:id="lastNameLabel" layoutX="265.0" layoutY="85.0" prefHeight="17.0" prefWidth="60.0" text="Mbiemri" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Label id="mobileLabel" fx:id="mobileLabel" layoutX="266.0" layoutY="141.0" text="Nr. Tel/Cel" textFill="#003dff">
+            <Label id="mobileLabel" fx:id="mobileLabel" layoutX="267.0" layoutY="150.0" prefHeight="17.0" prefWidth="80.0" text="Nr. Tel/Cel" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Label id="emailLabel" fx:id="emailLabel" layoutX="274.0" layoutY="180.0" text="Email" textFill="#003dff">
+            <Label id="emailLabel" fx:id="emailLabel" layoutX="266.0" layoutY="180.0" prefHeight="17.0" prefWidth="48.0" text="Email" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Label id="genderLabel" fx:id="genderLabel" layoutX="270.0" layoutY="247.0" text="Gjinia" textFill="#003dff">
+            <Label id="genderLabel" fx:id="genderLabel" layoutX="266.0" layoutY="247.0" prefHeight="17.0" prefWidth="54.0" text="Gjinia" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Label id="usernameLabel" fx:id="usernameLabel" layoutX="268.0" layoutY="285.0" text="Emri Perdoruesit" textFill="#003dff">
+            <Label id="usernameLabel" fx:id="usernameLabel" layoutX="263.0" layoutY="285.0" prefHeight="17.0" prefWidth="102.0" text="Username" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Label id="paswwordLabel" fx:id="paswwordLabel" layoutX="268.0" layoutY="318.0" text="Fjalekalimi" textFill="#003dff">
+            <Label id="paswwordLabel" fx:id="paswwordLabel" layoutX="263.0" layoutY="317.0" prefHeight="17.0" prefWidth="88.0" text="Fjalekalimi" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <Label id="confirmPaswwordLabel" fx:id="confirmPaswwordLabel" layoutX="266.0" layoutY="354.0" text="Konfirmo Fjalekalimin" textFill="#003dff">
+            <Label id="confirmPaswwordLabel" fx:id="confirmPaswwordLabel" layoutX="263.0" layoutY="354.0" text="Konfirmo Fjalekalimin" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
-            <TextField id="lastNameTextField" fx:id="lastNameTextField" layoutX="405.0" layoutY="92.0" promptText="Vendosni mbiemrin" />
-            <TextField id="mobileNumberTextField" fx:id="mobileNumberTextField" layoutX="405.0" layoutY="137.0" promptText="Vendosni Nr.Tel/Cel" />
+            <TextField id="lastNameTextField" fx:id="mbiemerTextField" layoutX="405.0" layoutY="81.0" promptText="Vendosni mbiemrin" />
+            <TextField id="mobileNumberTextField" fx:id="telefonTextField" layoutX="405.0" layoutY="146.0" promptText="Vendosni Nr.Tel/Cel" />
             <TextField id="emailTextField" fx:id="emailTextField" layoutX="405.0" layoutY="176.0" promptText="Adresa Email" />
-            <RadioButton id="genderMaleRadioButton" fx:id="genderMaleRadioButton" layoutX="405.0" layoutY="247.0" mnemonicParsing="false" text="Mashkull" />
-            <RadioButton id="genderFemaleRadioButton" fx:id="genderFemaleRadioButton" layoutX="500.0" layoutY="247.0" mnemonicParsing="false" text="Femer" />
+            <RadioButton id="genderMaleRadioButton" fx:id="gjiniaMashkullRadioButton" layoutX="405.0" layoutY="247.0" mnemonicParsing="false" text="Mashkull" />
+            <RadioButton id="genderFemaleRadioButton" fx:id="gjiniaFemerRadioButton" layoutX="500.0" layoutY="247.0" mnemonicParsing="false" text="Femer" />
             <TextField id="usernameTextField" fx:id="usernameTextField" layoutX="405.0" layoutY="281.0" promptText="Emri Perdoruesit" />
             <ImageView id="imageAdmin" fx:id="imageAdmin" fitHeight="150.0" fitWidth="200.0" layoutX="26.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -67,27 +67,34 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <Label id="addressLabel" fx:id="addressLabel" layoutX="271.0" layoutY="216.0" text="Adresa" textFill="#003dff">
+            <Label id="addressLabel" fx:id="addressLabel" layoutX="266.0" layoutY="216.0" prefHeight="17.0" prefWidth="48.0" text="Adresa" textFill="#003dff">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Label>
             <TextField id="addressTextField" fx:id="addressTextField" layoutX="405.0" layoutY="212.0" promptText="Vendosni Adresen" />
-            <Button id="registerButton" fx:id="registerButton" layoutX="79.0" layoutY="293.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="80.0" style="-fx-background-color: #7fff00;" text="REGISTER">
-               <font>
-                  <Font name="System Bold" size="12.0" />
-               </font></Button>
-            <Button id="cancelButton" fx:id="cancelButton" layoutX="79.0" layoutY="346.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="80.0" style="-fx-background-color: #ff4d4d;" text="CANCEL">
+            <Button id="registerButton" fx:id="registerButton" layoutX="79.0" layoutY="293.0" mnemonicParsing="false" onAction="#shtoPerdorues" prefHeight="33.0" prefWidth="80.0" style="-fx-background-color: #7fff00;" text="REGISTER">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
             <ButtonBar layoutX="51.0" layoutY="6.0" />
-            <PasswordField fx:id="passwordField" layoutX="405.0" layoutY="313.0" />
-            <PasswordField fx:id="confirmPasswordField" layoutX="405.0" layoutY="350.0" />
+            <PasswordField fx:id="passwordField" layoutX="405.0" layoutY="313.0" promptText="Fjalekalimi i perdoruesit" />
+            <PasswordField fx:id="confirmPasswordTextField" layoutX="405.0" layoutY="350.0" promptText="Konfirmo fjalekalimin" />
             <MenuButton fx:id="adminMenuButton" layoutX="10.0" layoutY="6.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="102.0" text="ADMIN" textFill="#f71111">
               <items>
                 <MenuItem fx:id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
               </items>
             </MenuButton>
+            <Label fx:id="messageLabel" layoutX="28.0" layoutY="343.0" prefHeight="28.0" prefWidth="200.0" textFill="#eb1212">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="268.0" layoutY="125.0" prefHeight="17.0" prefWidth="54.0" text="Roli" textFill="#003dff">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField fx:id="roliTextField" layoutX="405.0" layoutY="113.0" promptText="admin/farmacist" />
          </children>
       </Pane>
       <AnchorPane id="anchorPane" prefHeight="0.0" prefWidth="600.0" />

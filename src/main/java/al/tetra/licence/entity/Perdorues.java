@@ -24,10 +24,11 @@ public class Perdorues {
 	private String email;
 	private String adresa;
 	private String gjinia;
-	private Date datelindja;
 	private String username;
 	private String fjalekalim;
 	private String roli;
+	@Column(name = "nr_tel")
+	private String nrTel;
 	@Column(name = "eshte_loguar")
 	private int eshteLoguar;
 	public Long getId() {
@@ -66,12 +67,6 @@ public class Perdorues {
 	public void setGjinia(String gjinia) {
 		this.gjinia = gjinia;
 	}
-	public Date getDatelindja() {
-		return datelindja;
-	}
-	public void setDatelindja(Date datelindja) {
-		this.datelindja = datelindja;
-	}
 	public String getUsername() {
 		return username;
 	}
@@ -96,13 +91,14 @@ public class Perdorues {
 	public void setEshteLoguar(int eshteLoguar) {
 		this.eshteLoguar = eshteLoguar;
 	}
-	@Override
-	public String toString() {
-		return "Perdorues [id=" + id + ", emer=" + emer + ", mbiemer=" + mbiemer + ", email=" + email + ", adresa="
-				+ adresa + ", gjinia=" + gjinia + ", datelindja=" + datelindja + ", username=" + username
-				+ ", fjalekalim=" + fjalekalim + ", roli=" + roli + ", eshteLoguar=" + eshteLoguar + "]";
-	}
 	
+	public String getNrTel() {
+		return nrTel;
+	}
+	public void setNrTel(String nrTel) {
+		this.nrTel = nrTel;
+	}
+
 	
 	
 	

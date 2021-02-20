@@ -22,10 +22,12 @@ import org.junit.runner.RunWith;
 import org.passay.PasswordGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.PasswordService;
+import al.tetra.licence.service.PerdoruesService;
 import al.tetra.licence.util.CommandLineUtil;
 
 @RunWith(SpringRunner.class)
@@ -33,7 +35,7 @@ import al.tetra.licence.util.CommandLineUtil;
 public class testt {
 	
 	@Autowired
-	private PasswordService passwordService;
+	private PerdoruesService perdorues;
 	
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -125,11 +127,12 @@ public class testt {
 	
 @Test
 	@Transactional
+	@Rollback(false)
+
 	public void addUser() {
 		try {
-		System.err.println(entityManager
-				.createQuery("select p from Perdorues p where id=1",
-						Perdorues.class).getSingleResult().toString());
+		Perdorues p=perdorues.updatePerdorues("agathulaaaaaaa", "", "111", new Long(1), new Long(1));
+		System.err.println(p.toString());
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

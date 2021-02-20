@@ -13,7 +13,7 @@ import com.sun.glass.ui.MenuItem;
 import com.sun.glass.ui.View;
 
 import al.tetra.licence.entity.Perdorues;
-import al.tetra.licence.service.PerdoresService;
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
