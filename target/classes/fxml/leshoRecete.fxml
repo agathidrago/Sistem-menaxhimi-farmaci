@@ -10,6 +10,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -17,26 +18,26 @@
    <children>
       <MenuBar id="menuLeshoRecete" prefHeight="27.0" prefWidth="600.0">
         <menus>
-          <Menu id="fileMenu" mnemonicParsing="false" text="File">
+          <Menu id="fileMenu" fx:id="fileMenu" mnemonicParsing="false" text="File">
             <items>
-              <MenuItem id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
+              <MenuItem id="mbyllMenuItem" fx:id="mbyllMenu" mnemonicParsing="false" text="Mbyll" />
             </items>
           </Menu>
-          <Menu id="pacientMenu" mnemonicParsing="false" text="Pacient">
+          <Menu id="pacientMenu" fx:id="pacientMenu" mnemonicParsing="false" text="Pacient">
             <items>
-              <MenuItem id="regjistroPacientMenuItem" mnemonicParsing="false" text="Regjistro Pacient" />
-                  <MenuItem id="shikoKarteleMenuItem" mnemonicParsing="false" text="Shiko kartele" />
-                  <MenuItem id="shtoKarteleTeReMenuItem" mnemonicParsing="false" text="Shto kartele te re" />
+              <MenuItem id="regjistroPacientMenuItem" fx:id="regjistroPacientMenuItem" mnemonicParsing="false" text="Regjistro Pacient" />
+                  <MenuItem id="shikoKarteleMenuItem" fx:id="shikoKarteleMenuItem" mnemonicParsing="false" text="Shiko kartele" />
+                  <MenuItem id="shtoKarteleTeReMenuItem" fx:id="shtoKarteleTeReMenuItem" mnemonicParsing="false" text="Shto kartele te re" />
             </items>
           </Menu>
-          <Menu id="receteMenu" mnemonicParsing="false" text="Recete">
+          <Menu id="receteMenu" fx:id="receteMenu" mnemonicParsing="false" text="Recete">
             <items>
-              <MenuItem id="leshoReceteMenuItem" mnemonicParsing="false" text="Lesho recete" />
+              <MenuItem id="leshoReceteMenuItem" fx:id="leshoReceteMenuItem" mnemonicParsing="false" text="Lesho recete" />
             </items>
           </Menu>
-            <Menu id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
+            <Menu id="sherbimeMenu" fx:id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
                <items>
-                  <MenuItem id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
+                  <MenuItem id="editoPerdoruesMenuItem" fx:id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
                </items>
             </Menu>
         </menus>

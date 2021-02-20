@@ -6,6 +6,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
@@ -16,26 +17,26 @@
    <children>
       <MenuBar id="menuShikoKartele" fx:id="menuShikoKartele">
         <menus>
-          <Menu id="fileMenu" mnemonicParsing="false" text="File">
+          <Menu id="fileMenu" fx:id="fileMenu" mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem mnemonicParsing="false" text="Mbyll" />
+                  <MenuItem fx:id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
             </items>
           </Menu>
-          <Menu id="pacientMenu" mnemonicParsing="false" text="Pacient">
+          <Menu id="pacientMenu" fx:id="pacientMenu" mnemonicParsing="false" text="Pacient">
             <items>
-              <MenuItem id="regjistroPacientMenuItem" mnemonicParsing="false" text="Regjistro Pacient" />
-                  <MenuItem id="shtoKarteleMenuItem" mnemonicParsing="false" text="Shto kartele" />
-                  <MenuItem id="shtoKarteleTeReMenuItem" mnemonicParsing="false" text="Shto kartele te re" />
+              <MenuItem id="regjistroPacientMenuItem" fx:id="regjistroPacientMenuItem" mnemonicParsing="false" text="Regjistro Pacient" />
+                  <MenuItem id="shtoKarteleMenuItem" fx:id="shtoKarteleMenuItem" mnemonicParsing="false" text="Shto kartele" />
+                  <MenuItem id="shtoKarteleTeReMenuItem" fx:id="shtoKarteleTereMenuItem" mnemonicParsing="false" text="Shto kartele te re" />
             </items>
           </Menu>
-            <Menu id="receteMenu" mnemonicParsing="false" text="Recete">
+            <Menu id="receteMenu" fx:id="receteMenu" mnemonicParsing="false" text="Recete">
                <items>
-                  <MenuItem id="leshoReceteMenuItem" mnemonicParsing="false" text="Lesho recete" />
+                  <MenuItem id="leshoReceteMenuItem" fx:id="leshoreceteMenuItem" mnemonicParsing="false" text="Lesho recete" />
                </items>
             </Menu>
-            <Menu id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
+            <Menu id="sherbimeMenu" fx:id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
                <items>
-                  <MenuItem id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
+                  <MenuItem id="editoPerdoruesMenuItem" fx:id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
                </items>
             </Menu>
         </menus>
@@ -44,8 +45,11 @@
          <image>
             <Image url="@doctor-clinic.jpg" />
          </image>
+         <effect>
+            <DropShadow />
+         </effect>
       </ImageView>
-      <Pane id="shikoKartele" prefHeight="262.0" prefWidth="600.0">
+      <Pane id="shikoKartele" fx:id="shikoKartelePane" prefHeight="262.0" prefWidth="600.0">
          <children>
             <Label id="shikoKarteleLabel" fx:id="shikoKarteleLabel" layoutX="310.0" layoutY="-101.0" prefHeight="96.0" prefWidth="193.0" text="Shiko Kartele">
                <font>
@@ -67,7 +71,11 @@
                   <Font size="17.0" />
                </font>
             </Button>
+<<<<<<< HEAD
             <Label id="teDhenatEKartelesSePacientitLabel" fx:id="teDhenatEKartelesSePacientitLabel" layoutX="32.0" layoutY="84.0" style="-fx-background-color: #FFE4C4;" text="Te dhenat e karteles se pacientit">
+=======
+            <Label id="teDhenatEKartelesSePacientitLabel" fx:id="teDhenatEKartelesSePacientitLabel" layoutX="40.0" layoutY="81.0" style="-fx-background-color: #FFE4C4;" text="Te dhenat e karteles se pacientit">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>

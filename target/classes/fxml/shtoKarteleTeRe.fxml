@@ -6,9 +6,11 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -23,8 +25,13 @@
           </Menu>
           <Menu fx:id="pacientMenu" mnemonicParsing="false" text="Pacient">
             <items>
+<<<<<<< HEAD
               <MenuItem fx:id="regjistroPacient" mnemonicParsing="false" text="Regjistro pacient" />
                   <MenuItem fx:id="shikoKartele" mnemonicParsing="false" text="Shiko kartele" />
+=======
+              <MenuItem fx:id="regjistroPacientMenuItem" mnemonicParsing="false" text="Regjistro pacient" />
+                  <MenuItem fx:id="shikoKarteleMenuItem" mnemonicParsing="false" text="Shiko kartele" />
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                   <MenuItem fx:id="shtoKarteleTeReMenuItem" mnemonicParsing="false" text="Shto kartele te re" />
             </items>
           </Menu>
@@ -44,7 +51,11 @@
          <image>
             <Image url="@doctor-clinic.jpg" />
          </image>
+         <effect>
+            <DropShadow />
+         </effect>
       </ImageView>
+<<<<<<< HEAD
       <AnchorPane fx:id="shtoKarteleTere" prefHeight="259.0" prefWidth="600.0">
          <children>
             <Label fx:id="shtoKarteleTeReLabel" layoutX="291.0" layoutY="-87.0" prefHeight="58.0" prefWidth="215.0" text="Shto kartele te re">
@@ -90,5 +101,55 @@
          </children>
       </AnchorPane>
       <AnchorPane fx:id="anchorPane" prefHeight="200.0" prefWidth="200.0" />
+=======
+      <Pane fx:id="shtoKarteleTeRePane">
+         <children>
+            <AnchorPane fx:id="shtoKarteleTereAnchorPane" layoutY="6.0" prefHeight="236.0" prefWidth="600.0">
+               <children>
+                  <Label fx:id="shtoKarteleTeReLabel" layoutX="291.0" layoutY="-87.0" prefHeight="58.0" prefWidth="215.0" text="Shto kartele te re">
+                     <font>
+                        <Font name="System Bold Italic" size="21.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emriIPacientitTextField" layoutX="209.0" layoutY="38.0" promptText="Emri i pacientit" />
+                  <Button fx:id="SearchButton" layoutX="390.0" layoutY="32.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="63.0" text="Search">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="emriLabel" layoutX="109.0" layoutY="90.0" text="Emri" textFill="#1660c9">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="moshaLabel" layoutX="103.0" layoutY="121.0" text=" Mosha" textFill="#1660c9">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="semundjaLabel" layoutX="107.0" layoutY="156.0" text="Semundja" textFill="#1660c9">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ilaceLabel" layoutX="108.0" layoutY="187.0" text="Ilace" textFill="#1660c9">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emriTextField" layoutX="209.0" layoutY="86.0" />
+                  <TextField fx:id="semundjaTextField" layoutX="209.0" layoutY="152.0" />
+                  <TextField fx:id="moshaTextFild" layoutX="209.0" layoutY="117.0" />
+                  <TextField fx:id="ilaceTextField" layoutX="209.0" layoutY="192.0" />
+                  <Button fx:id="ruajButton" layoutX="399.0" layoutY="189.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: #ff4d4d;" text="Ruaj">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
    </children>
 </VBox>

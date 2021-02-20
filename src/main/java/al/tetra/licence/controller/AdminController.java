@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
-
 import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.PerdoruesService;
 import javafx.application.Platform;
@@ -22,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -42,7 +42,11 @@ public class AdminController implements Initializable {
 	@Autowired
 	private PerdoruesService perdoruesService;
 	@FXML
-	private MenuBar adminMenuBar;
+	private Pane adminPane;
+	@FXML
+	private MenuButton adminMenuButton;
+	@FXML
+	private MenuItem mbyllMenuItem;
 	@FXML
 	private Label firstNameLabel;
 	@FXML

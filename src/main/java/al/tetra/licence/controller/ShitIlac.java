@@ -1,5 +1,4 @@
 package al.tetra.licence.controller;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -11,9 +10,10 @@ import org.springframework.stereotype.Component;
 import com.sun.glass.ui.Menu;
 import com.sun.glass.ui.MenuBar;
 import com.sun.glass.ui.MenuItem;
+import com.sun.glass.ui.View;
 
 import al.tetra.licence.entity.Perdorues;
-import al.tetra.licence.service.PerdoruesService;
+import al.tetra.licence.service.PerdoresService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,8 +22,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -37,79 +39,63 @@ import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Component
-@FxmlView("/fxml/shikoKartele.fxml")
+@FxmlView("/fxml/shitIlace.fxml")
 
-public class ShikoKarteleController implements Initializable {
-	@Autowired
-	private PerdoruesService perdoruesService;
-	
+public class ShitIlac implements Initializable{
 	@FXML
-	private MenuBar menuShikoKartele;
-    @FXML
-    private Menu fileMenu;
-    @FXML
-    private MenuItem mbyllMenuItem;
-    @FXML
-    private Menu pacientMenu;
-    @FXML
-    private MenuItem regjistroPacientMenuItem;
-    @FXML
-    private MenuItem shtoKarteleMenuItem;
-    @FXML
-    private MenuItem shtoKarteleTereMenuItem;
-    @FXML
-    private Menu receteMenu;
-    @FXML
-    private MenuItem leshoreceteMenuItem;
-    @FXML
-    private Menu sherbimeMenu;
-    @FXML
-    private MenuItem editoPerdoruesMenuItem;
+	private MenuBar shitIlaceMenuBar;
 	@FXML
-	private ImageView imageShikoKartele;
+	private Menu fileMenu;
 	@FXML
-	private Pane shikoKartelePane;
+	private MenuItem mbyllMenuItem;
 	@FXML
-	private Label shikoKarteleLabel;
+	private Menu ilaceMenu;
 	@FXML
-	private TextField pacientiTextField;
+	private MenuItem regjistroIlacMenuItem;
 	@FXML
-	private Button serachButton;
+	private MenuItem perditesoIlacMenuItem;
 	@FXML
-	private Label teDhenatEKartelesSePacientitLabel;
+	private MenuItem shitIlacMenuItem;
 	@FXML
-	private Label emriIPacientitLabel;
+	private Menu recetaMenu;
 	@FXML
-	private TextField emriPacientitTextField;
+	private MenuItem shikoReceteMenuItem;
 	@FXML
-	private Label moshaLabel;
+	private Menu sherbimeMenu;
 	@FXML
-	private TextField moshaTextField;
+	private MenuItem editoPerdoruesMenuItem;
 	@FXML
-	private Label semundjeLabel;
+	private MenuItem shtoPerdoruesMenuItem;
 	@FXML
-	private TextField semundjeTextField;
+	private Pane shitIlacePane;
 	@FXML
-	private Label ilaceLabel;
+	private Label shitIlaceLabel;
 	@FXML
-	private TextField ilaceTextField;
+	private Label meReceteLabel;
 	@FXML
-	private Button shtoKarteleButton;
-
+	private RadioButton poRadioButton;
+	@FXML
+	private RadioButton joRadioButton;
+	@FXML
+	private TextField kerkoIlacinTextField;
+	@FXML
+	private Button shitButton;
+	@FXML
+	private ImageView shitIlaceImage;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		File file = new File("C:/Users/CRS/Desktop/doctor-clinic.jpg");
+		File file = new File("C:/Users/CRS/Desktop/ilacee.jpg");
 		Image image = new Image(file.getPath(), 160, 160, false, true);
-		imageShikoKartele.setImage(image);
+		shitIlaceImage.setImage(image);
 	}
 	@FXML
-	public void closeShikoKartele() throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/shikoKartele.fxml"));
+	public void closePerditesoIlace() throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/shitIlace.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage1 = new Stage();
 		stage1.setScene(scene);
 
-		Parent main = FXMLLoader.load(getClass().getResource("/fxml/admin.fxml"));
+		Parent main = FXMLLoader.load(getClass().getResource("/fxml/______.fxml"));
 		Scene sceneMain = new Scene(main);
 		Stage stage = new Stage();
 
@@ -122,4 +108,5 @@ public class ShikoKarteleController implements Initializable {
 		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
 		stage1.close();
 	}
+
 }

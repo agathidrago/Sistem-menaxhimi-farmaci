@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 
-
 import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.PerdoruesService;
 import javafx.application.Platform;
@@ -44,9 +43,33 @@ public class ShtoKarteleTeReController implements Initializable{
 	@FXML
 	private MenuBar menuShtoKarteleTeRe;
 	@FXML
-	private Label shtoKarteleTeReLabel;
+	private Menu fileMenu;
+	@FXML
+	private MenuItem mbyllMenuItem;
+	@FXML
+	private Menu pacientMenu;
+	@FXML
+	private MenuItem regjistroPacientMenuItem;
+	@FXML
+	private MenuItem shikoKarteleMenuItem;
+	@FXML
+	private MenuItem shtoKarteleTeReMenuItem;
+	@FXML
+	private Menu receteMenu;
+	@FXML
+	private MenuItem leshoReceteMenuItem;
+	@FXML
+	private Menu sherbimeMenu;
+	@FXML
+	private MenuItem editoPerdoruesMenuItem;
 	@FXML
 	private ImageView imageShtoKarteleTeRe;
+	@FXML
+	private Pane shtoKarteleTeRePane;
+	@FXML
+	private AnchorPane shtoKarteleTereAnchorPane;
+	@FXML
+	private Label shtoKarteleTeReLabel;
 	@FXML
 	private TextField emriIPacientitTextField;
 	@FXML
@@ -54,17 +77,17 @@ public class ShtoKarteleTeReController implements Initializable{
 	@FXML
 	private Label emriLabel;
 	@FXML
-	private TextField emriTextField;
-	@FXML
 	private Label moshaLabel;
-	@FXML
-	private TextField moshaTextField;
 	@FXML
 	private Label semundjaLabel;
 	@FXML
+	private Label ilaceLabel;
+	@FXML
+	private TextField emriTextField;
+	@FXML
 	private TextField semundjaTextField;
 	@FXML
-	private Label ilaceLabel;
+	private TextField moshaTextFild;
 	@FXML
 	private TextField ilaceTextField;
 	@FXML

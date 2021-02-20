@@ -8,10 +8,16 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
+<<<<<<< HEAD
+=======
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <MenuBar>
@@ -37,18 +43,55 @@
                <items>
                   <MenuItem mnemonicParsing="false" text="Edito perdorues" />
                   <MenuItem mnemonicParsing="false" text="Shto perdorues" />
+=======
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar fx:id="perditesoIlacMenuBar">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
+            </items>
+          </Menu>
+          <Menu fx:id="ilaceMenu" mnemonicParsing="false" text="Ilace">
+            <items>
+              <MenuItem fx:id="regjistroIlacMenuItem" mnemonicParsing="false" text="Regjistro ilac" />
+                  <MenuItem fx:id="perditesoIlacMenuItem" mnemonicParsing="false" text="Perditeso ilac" />
+                  <MenuItem fx:id="shitIlacMenuItem" mnemonicParsing="false" text="Shit ilac" />
+            </items>
+          </Menu>
+          <Menu fx:id="recetaMenu" mnemonicParsing="false" text="Receta">
+            <items>
+              <MenuItem fx:id="shikoReceteMenuItem" mnemonicParsing="false" text="Shiko recete" />
+            </items>
+          </Menu>
+            <Menu fx:id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
+               <items>
+                  <MenuItem fx:id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
+                  <MenuItem fx:id="shtoPerdoruesMenuItem" mnemonicParsing="false" text="Shto perdorues" />
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                </items>
             </Menu>
         </menus>
       </MenuBar>
+<<<<<<< HEAD
       <Pane prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;">
          <children>
             <Label layoutX="213.0" layoutY="38.0" text="Perditeso ilace">
+=======
+      <Pane fx:id="perditesoIlacePane" prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;">
+         <children>
+            <Label fx:id="perditesoIlaceLabel" layoutX="213.0" layoutY="38.0" text="Perditeso Ilace">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
             </Label>
+<<<<<<< HEAD
             <Label layoutX="35.0" layoutY="134.0" text="Emri" textFill="#1660c9">
+=======
+            <Label fx:id="emriLabel" layoutX="35.0" layoutY="134.0" text="Emri" textFill="#1660c9">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -56,51 +99,91 @@
             <TextField fx:id="kerkoIlacTextField" layoutX="161.0" layoutY="87.0" promptText="Kerko ilac" />
             <TextField fx:id="emriTextField" layoutX="161.0" layoutY="131.0" promptText="emri" />
             <TextField fx:id="sasiaTextField" layoutX="161.0" layoutY="166.0" promptText="sasia" />
+<<<<<<< HEAD
             <Label layoutX="35.0" layoutY="169.0" text="Sasia" textFill="#1660c9">
+=======
+            <Label fx:id="sasiaLabel" layoutX="35.0" layoutY="169.0" text="Sasia" textFill="#1660c9">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
             <TextField fx:id="madhesiaTextField" layoutX="161.0" layoutY="200.0" promptText="madhesia" />
+<<<<<<< HEAD
             <Label layoutX="34.0" layoutY="203.0" text="Madhesia" textFill="#1660c9">
+=======
+            <Label fx:id="madhesiaLabel" layoutX="34.0" layoutY="203.0" text="Madhesia" textFill="#1660c9">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
+<<<<<<< HEAD
             <Label layoutX="35.0" layoutY="322.0" text="Me recete" textFill="#1660c9">
+=======
+            <Label fx:id="meReceteLabel" layoutX="35.0" layoutY="322.0" text="Me recete" textFill="#1660c9">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
             <RadioButton fx:id="poButton" layoutX="161.0" layoutY="323.0" mnemonicParsing="false" text="Po" />
             <RadioButton fx:id="joButton" layoutX="247.0" layoutY="323.0" mnemonicParsing="false" text="Jo" />
+<<<<<<< HEAD
             <Button fx:id="searchButton" layoutX="347.0" layoutY="85.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="69.0" style="-fx-background-color: #ff4d4d;" text="Search">
+=======
+            <Button fx:id="searchButton" layoutX="347.0" layoutY="85.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #ff4d4d;" text="Search">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Button>
             <DatePicker fx:id="data" layoutX="160.0" layoutY="242.0" />
+<<<<<<< HEAD
             <Label layoutX="36.0" layoutY="245.0" text="Data" textFill="#1660c9">
+=======
+            <Label fx:id="dateLabel" layoutX="36.0" layoutY="245.0" text="Data" textFill="#1660c9">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
+<<<<<<< HEAD
             <Label layoutX="36.0" layoutY="287.0" text="Cmimi" textFill="#1660c9">
+=======
+            <Label fx:id="cmimiLabel" layoutX="36.0" layoutY="287.0" text="Cmimi" textFill="#1660c9">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
             <TextField fx:id="cmimiTextField1" layoutX="161.0" layoutY="284.0" promptText="cmimi" />
+<<<<<<< HEAD
             <Button fx:id="fshiButton" layoutX="355.0" layoutY="307.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="69.0" style="-fx-background-color: #ff4d4d;" text="Fshi">
+=======
+            <Button fx:id="fshiButton" layoutX="348.0" layoutY="308.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" style="-fx-background-color: #ff4d4d;" text="Fshi">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+<<<<<<< HEAD
             <Button fx:id="ruajButton" layoutX="490.0" layoutY="307.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="69.0" style="-fx-background-color: #ff4d4d;" text="Ruaj">
+=======
+            <Button fx:id="ruajButton" layoutX="477.0" layoutY="308.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #ff4d4d;" text="Ruaj">
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
+<<<<<<< HEAD
+=======
+            <ImageView fx:id="perditesoIlaceImage" fitHeight="150.0" fitWidth="200.0" layoutX="348.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ilacee.jpg" />
+               </image>
+            </ImageView>
+>>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
          </children>
       </Pane>
    </children>
