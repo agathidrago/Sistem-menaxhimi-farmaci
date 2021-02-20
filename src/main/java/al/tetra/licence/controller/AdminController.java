@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.sun.glass.ui.MenuBar;
+import com.sun.glass.ui.MenuItem;
 
 import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.PerdoresService;
@@ -21,6 +22,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -41,7 +43,11 @@ public class AdminController implements Initializable {
 	@Autowired
 	private PerdoresService perdoruesService;
 	@FXML
-	private MenuBar adminMenuBar;
+	private Pane adminPane;
+	@FXML
+	private MenuButton adminMenuButton;
+	@FXML
+	private MenuItem mbyllMenuItem;
 	@FXML
 	private Label firstNameLabel;
 	@FXML
@@ -75,11 +81,11 @@ public class AdminController implements Initializable {
 	@FXML
 	private Label paswwordLabel;
 	@FXML
-	private TextField passwordTextField;
+	private PasswordField passwordField;
 	@FXML
 	private Label confirmPaswwordLabel;
 	@FXML
-	private TextField confirmPasswordTextField;
+	private PasswordField confirmPasswordField;
 	@FXML
 	private Button registerButton;
 	@FXML

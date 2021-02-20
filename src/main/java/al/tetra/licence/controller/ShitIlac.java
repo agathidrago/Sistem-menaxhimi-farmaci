@@ -1,5 +1,4 @@
 package al.tetra.licence.controller;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -11,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.sun.glass.ui.Menu;
 import com.sun.glass.ui.MenuBar;
 import com.sun.glass.ui.MenuItem;
+import com.sun.glass.ui.View;
 
 import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.PerdoresService;
@@ -22,8 +22,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -37,77 +39,63 @@ import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Component
-@FxmlView("/fxml/shtoKarteleTeRe.fxml")
-public class ShtoKarteleTeRe implements Initializable{
-	@Autowired
-	private PerdoresService perdoruesService;
-	
+@FxmlView("/fxml/shitIlace.fxml")
+
+public class ShitIlac implements Initializable{
 	@FXML
-	private MenuBar menuShtoKarteleTeRe;
+	private MenuBar shitIlaceMenuBar;
 	@FXML
 	private Menu fileMenu;
 	@FXML
 	private MenuItem mbyllMenuItem;
 	@FXML
-	private Menu pacientMenu;
+	private Menu ilaceMenu;
 	@FXML
-	private MenuItem regjistroPacientMenuItem;
+	private MenuItem regjistroIlacMenuItem;
 	@FXML
-	private MenuItem shikoKarteleMenuItem;
+	private MenuItem perditesoIlacMenuItem;
 	@FXML
-	private MenuItem shtoKarteleTeReMenuItem;
+	private MenuItem shitIlacMenuItem;
 	@FXML
-	private Menu receteMenu;
+	private Menu recetaMenu;
 	@FXML
-	private MenuItem leshoReceteMenuItem;
+	private MenuItem shikoReceteMenuItem;
 	@FXML
 	private Menu sherbimeMenu;
 	@FXML
 	private MenuItem editoPerdoruesMenuItem;
 	@FXML
-	private ImageView imageShtoKarteleTeRe;
+	private MenuItem shtoPerdoruesMenuItem;
 	@FXML
-	private Pane shtoKarteleTeRePane;
+	private Pane shitIlacePane;
 	@FXML
-	private AnchorPane shtoKarteleTereAnchorPane;
+	private Label shitIlaceLabel;
 	@FXML
-	private Label shtoKarteleTeReLabel;
+	private Label meReceteLabel;
 	@FXML
-	private TextField emriIPacientitTextField;
+	private RadioButton poRadioButton;
 	@FXML
-	private Button SearchButton;
+	private RadioButton joRadioButton;
 	@FXML
-	private Label emriLabel;
+	private TextField kerkoIlacinTextField;
 	@FXML
-	private Label moshaLabel;
+	private Button shitButton;
 	@FXML
-	private Label semundjaLabel;
-	@FXML
-	private Label ilaceLabel;
-	@FXML
-	private TextField emriTextField;
-	@FXML
-	private TextField semundjaTextField;
-	@FXML
-	private TextField moshaTextFild;
-	@FXML
-	private TextField ilaceTextField;
-	@FXML
-	private Button ruajButton;
+	private ImageView shitIlaceImage;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		File file = new File("C:/Users/CRS/Desktop/doctor-clinic.jpg");
+		File file = new File("C:/Users/CRS/Desktop/ilacee.jpg");
 		Image image = new Image(file.getPath(), 160, 160, false, true);
-		imageShtoKarteleTeRe.setImage(image);
+		shitIlaceImage.setImage(image);
 	}
 	@FXML
-	public void closeShikoKartele() throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/shtoKarteleTeRe.fxml"));
+	public void closePerditesoIlace() throws IOException {
+		Parent root = FXMLLoader.load(getClass().getResource("/fxml/shitIlace.fxml"));
 		Scene scene = new Scene(root);
 		Stage stage1 = new Stage();
 		stage1.setScene(scene);
 
-		Parent main = FXMLLoader.load(getClass().getResource("/fxml/leshoRecete.fxml"));
+		Parent main = FXMLLoader.load(getClass().getResource("/fxml/______.fxml"));
 		Scene sceneMain = new Scene(main);
 		Stage stage = new Stage();
 
@@ -120,4 +108,5 @@ public class ShtoKarteleTeRe implements Initializable{
 		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
 		stage1.close();
 	}
+
 }

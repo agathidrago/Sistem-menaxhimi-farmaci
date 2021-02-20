@@ -10,81 +10,79 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.controller.leshoReceteController">
    <children>
-      <Label id="faqeKryesoreMjekuLabel" text="Faqja Kryesore e Mjekut" textAlignment="RIGHT" textOverrun="CLIP" underline="true" wrapText="true" />
-      <MenuBar id="menuLeshoRecete" prefHeight="27.0" prefWidth="600.0">
+      <Label id="faqeKryesoreMjekuLabel" fx:id="faqeKryesoreMjekuLabel" text="Faqja Kryesore e Mjekut" textAlignment="RIGHT" textOverrun="CLIP" underline="true" wrapText="true" />
+      <MenuBar id="menuLeshoRecete" fx:id="menuLeshoRecete" prefHeight="27.0" prefWidth="600.0">
         <menus>
-          <Menu id="fileMenu" mnemonicParsing="false" text="File">
+          <Menu id="fileMenu" fx:id="fileMenu" mnemonicParsing="false" text="File">
             <items>
-              <MenuItem id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
+              <MenuItem id="mbyllMenuItem" fx:id="mbyllMenu" mnemonicParsing="false" text="Mbyll" />
             </items>
           </Menu>
-          <Menu id="pacientMenu" mnemonicParsing="false" text="Pacient">
+          <Menu id="pacientMenu" fx:id="pacientMenu" mnemonicParsing="false" text="Pacient">
             <items>
-              <MenuItem id="regjistroPacientMenuItem" mnemonicParsing="false" text="Regjistro Pacient" />
-                  <MenuItem id="shikoKarteleMenuItem" mnemonicParsing="false" text="Shiko kartele" />
-                  <MenuItem id="shtoKarteleTeReMenuItem" mnemonicParsing="false" text="Shto kartele te re" />
+              <MenuItem id="regjistroPacientMenuItem" fx:id="regjistroPacientMenuItem" mnemonicParsing="false" text="Regjistro Pacient" />
+                  <MenuItem id="shikoKarteleMenuItem" fx:id="shikoKarteleMenuItem" mnemonicParsing="false" text="Shiko kartele" />
+                  <MenuItem id="shtoKarteleTeReMenuItem" fx:id="shtoKarteleTeReMenuItem" mnemonicParsing="false" text="Shto kartele te re" />
             </items>
           </Menu>
-          <Menu id="receteMenu" mnemonicParsing="false" text="Recete">
+          <Menu id="receteMenu" fx:id="receteMenu" mnemonicParsing="false" text="Recete">
             <items>
-              <MenuItem id="leshoReceteMenuItem" mnemonicParsing="false" text="Lesho recete" />
+              <MenuItem id="leshoReceteMenuItem" fx:id="leshoReceteMenuItem" mnemonicParsing="false" text="Lesho recete" />
             </items>
           </Menu>
-            <Menu id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
+            <Menu id="sherbimeMenu" fx:id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
                <items>
-                  <MenuItem id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
+                  <MenuItem id="editoPerdoruesMenuItem" fx:id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
                </items>
             </Menu>
         </menus>
       </MenuBar>
-      <ImageView id="imageRecete" fitHeight="149.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView id="imageRecete" fx:id="imageRecete" fitHeight="149.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@doctor-clinic.jpg" />
          </image>
       </ImageView>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <Pane fx:id="leshoRecetePane" prefHeight="186.0" prefWidth="600.0">
          <children>
-            <Label id="emerPacientiLabel" layoutX="33.0" layoutY="33.0" text="Emer pacienti" textFill="BLUE">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font>
-            </Label>
-            <Label id="ilaceLabel" layoutX="37.0" layoutY="92.0" text="Ilace" textFill="BLUE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label id="mjekuLabel" layoutX="33.0" layoutY="156.0" text="Mjeku" textFill="BLUE">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Label>
-            <TextField id="emerPacientiTextField" layoutX="179.0" layoutY="31.0" prefHeight="25.0" prefWidth="193.0" />
-            <TextField id="mjekuTextField" layoutX="177.0" layoutY="156.0" prefHeight="25.0" prefWidth="193.0" />
-            <TextArea id="ilaceTextArea" layoutX="180.0" layoutY="72.0" prefHeight="57.0" prefWidth="193.0" />
-            <Button id="ruajButton" layoutX="452.0" layoutY="134.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="87.0" style="-fx-background-color: #ff4d4d;" text="Ruaj">
-               <font>
-                  <Font name="System Bold" size="16.0" />
-               </font>
-            </Button>
-            <Label id="leshoReceteLabel" layoutX="300.0" layoutY="-84.0" prefHeight="74.0" prefWidth="217.0" text="Lesho Recete">
-               <font>
-                  <Font name="System Bold Italic" size="26.0" />
-               </font>
-            </Label>
+            <AnchorPane fx:id="leshoReceteAnchorPane" layoutX="14.0" layoutY="-8.0" prefHeight="218.0" prefWidth="584.0">
+               <children>
+                  <Label id="emerPacientiLabel" fx:id="emerPacientiLabel" layoutX="33.0" layoutY="33.0" text="Emer pacienti" textFill="BLUE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label id="ilaceLabel" fx:id="ilaceLabel" layoutX="37.0" layoutY="92.0" text="Ilace" textFill="BLUE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label id="mjekuLabel" fx:id="mjekuLabel" layoutX="33.0" layoutY="156.0" text="Mjeku" textFill="BLUE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField id="emerPacientiTextField" fx:id="emerPacientiTextField" layoutX="179.0" layoutY="31.0" prefHeight="25.0" prefWidth="193.0" />
+                  <TextField id="mjekuTextField" fx:id="mjekuTextField" layoutX="177.0" layoutY="156.0" prefHeight="25.0" prefWidth="193.0" />
+                  <TextArea id="ilaceTextArea" fx:id="ilaceTextArea" layoutX="180.0" layoutY="72.0" prefHeight="57.0" prefWidth="193.0" />
+                  <Button id="ruajButton" fx:id="ruajButton" layoutX="452.0" layoutY="134.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="87.0" style="-fx-background-color: #ff4d4d;" text="Ruaj">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Button>
+                  <Label id="leshoReceteLabel" fx:id="leshoReceteLabel" layoutX="300.0" layoutY="-84.0" prefHeight="74.0" prefWidth="217.0" text="Lesho Recete">
+                     <font>
+                        <Font name="System Bold Italic" size="26.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
          </children>
-      </AnchorPane>
-      <AnchorPane id="anchorPane" prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane id="anchorPane" prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane id="anchorPane" prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane id="anchorPane" prefHeight="200.0" prefWidth="200.0" />
-      <AnchorPane id="anchorPane" prefHeight="200.0" prefWidth="200.0" />
+      </Pane>
    </children>
 </VBox>

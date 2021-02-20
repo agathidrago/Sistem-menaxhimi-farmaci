@@ -9,7 +9,10 @@ import java.util.ResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.sun.glass.ui.Menu;
 import com.sun.glass.ui.MenuBar;
+import com.sun.glass.ui.MenuItem;
+import com.sun.glass.ui.View;
 
 import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.PerdoresService;
@@ -38,30 +41,52 @@ import net.rgielen.fxweaver.core.FxmlView;
 @Component
 @FxmlView("/fxml/leshoRecete.fxml")
 public class LeshoRecete implements Initializable {
-	@Autowired
-	private PerdoresService perdoruesService;
 	@FXML
 	private Label faqeKryesoreMjekuLabel;
 	@FXML
 	private MenuBar menuLeshoRecete;
 	@FXML
+	private Menu fileMenu;
+	@FXML
+	private MenuItem mbyllMenu;
+	@FXML
+	private Menu pacientMenu;
+	@FXML
+	private MenuItem regjistroPacientMenuItem;
+	@FXML
+	private MenuItem shikoKarteleMenuItem;
+	@FXML
+	private MenuItem shtoKarteleTeReMenuItem;
+	@FXML
+	private Menu receteMenu;
+	@FXML
+	private MenuItem leshoReceteMenuItem;
+	@FXML
+	private Menu sherbimeMenu;
+	@FXML
+	private MenuItem editoPerdoruesMenuItem;
+	@FXML
 	private ImageView imageRecete;
 	@FXML
-	private Label leshoReceteLabel;
+	private Pane leshoRecetePane;
+	@FXML
+	private AnchorPane leshoReceteAnchorPane;
 	@FXML
 	private Label emerPacientiLabel;
 	@FXML
-	private TextField emerPacientiTextField;
-	@FXML
 	private Label ilaceLabel;
-	@FXML
-	private TextArea ilaceTextArea;
 	@FXML
 	private Label mjekuLabel;
 	@FXML
+	private TextField emerPacientiTextField;
+	@FXML
 	private TextField mjekuTextField;
 	@FXML
+	private TextArea ilaceTextArea;
+	@FXML
 	private Button ruajButton;
+	@FXML
+	private Label leshoReceteLabel;
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

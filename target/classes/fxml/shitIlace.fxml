@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar fx:id="shitIlaceMenuBar">
+        <menus>
+          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
+            </items>
+          </Menu>
+          <Menu fx:id="ilaceMenu" mnemonicParsing="false" text="Ilace">
+            <items>
+              <MenuItem fx:id="regjistroIlacMenuItem" mnemonicParsing="false" text="Regjistro ilac" />
+                  <MenuItem fx:id="perditesoIlacMenuItem" mnemonicParsing="false" text="Perditeso ilac" />
+                  <MenuItem fx:id="shitIlacMenuItem" mnemonicParsing="false" text="Shit ilac" />
+            </items>
+          </Menu>
+          <Menu fx:id="recetaMenu" mnemonicParsing="false" text="Receta">
+            <items>
+              <MenuItem fx:id="shikoReceteMenuItem" mnemonicParsing="false" text="Shiko recete" />
+            </items>
+          </Menu>
+            <Menu fx:id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
+               <items>
+                  <MenuItem fx:id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
+                  <MenuItem fx:id="shtoPerdoruesMenuItem" mnemonicParsing="false" text="Shto perdorues" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Pane fx:id="shitIlacePane" prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;">
+         <children>
+            <Label fx:id="shitIlaceLabel" layoutX="213.0" layoutY="38.0" text="Shit  Ilace">
+               <font>
+                  <Font name="Arial Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="meReceteLabel" layoutX="42.0" layoutY="108.0" text="Me recete" textFill="#1660c9">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="poRadioButton" layoutX="165.0" layoutY="109.0" mnemonicParsing="false" text="Po" />
+            <RadioButton fx:id="joRadioButton" layoutX="269.0" layoutY="109.0" mnemonicParsing="false" text="Jo" />
+            <TextField fx:id="kerkoIlacinTextField" layoutX="42.0" layoutY="163.0" promptText="kerko ilacin" />
+            <Button fx:id="shitButton" layoutX="221.0" layoutY="164.0" mnemonicParsing="false" text="Shit" />
+            <ImageView fx:id="shitIlaceImage" fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@ilacee.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</VBox>
