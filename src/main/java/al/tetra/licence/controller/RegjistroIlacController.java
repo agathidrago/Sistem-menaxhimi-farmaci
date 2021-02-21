@@ -1,4 +1,5 @@
 package al.tetra.licence.controller;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -13,7 +14,6 @@ import com.sun.glass.ui.MenuItem;
 import com.sun.glass.ui.View;
 
 import al.tetra.licence.entity.Perdorues;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -39,11 +39,10 @@ import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Component
-@FxmlView("/fxml/shitIlace.fxml")
-
-public class ShitIlac implements Initializable{
+@FxmlView("/fxml/regjistroIlac.fxml")
+public class RegjistroIlacController implements Initializable{
 	@FXML
-	private MenuBar shitIlaceMenuBar;
+	private MenuBar regjistroIlacMenuBar;
 	@FXML
 	private Menu fileMenu;
 	@FXML
@@ -67,46 +66,71 @@ public class ShitIlac implements Initializable{
 	@FXML
 	private MenuItem shtoPerdoruesMenuItem;
 	@FXML
-	private Pane shitIlacePane;
+	private Pane regjistroIlacPane;
 	@FXML
-	private Label shitIlaceLabel;
+	private Label regjistroIlacLabel;
 	@FXML
-	private Label meReceteLabel;
+	private Label emerIlaciTextField;
+	@FXML
+	private Label madhesiaLabel;
+	@FXML
+	private TextField emerIaciTextField;
+	@FXML
+	private TextField madhesiaTextField;
+	@FXML
+	private Label sasialabel;
+	@FXML
+	private TextField sasiaTextField;
+	@FXML
+	private Label dataFurnizimitLabel;
+	@FXML
+	private Label cmimiBlerjesLabel;
+	@FXML
+	private Label cmimiShitjeslabel;
+	@FXML
+	private TextField cmimiBlerjesTextField;
+	@FXML
+	private TextField cmimiBlerjesTextFiield;
+	@FXML
+	private Label meRecetelabel;
 	@FXML
 	private RadioButton poRadioButton;
 	@FXML
 	private RadioButton joRadioButton;
 	@FXML
-	private TextField kerkoIlacinTextField;
+	private Button ruajButton;
 	@FXML
-	private Button shitButton;
+	private DatePicker dataFurnizimit;
 	@FXML
-	private ImageView shitIlaceImage;
+	private ImageView regjistroIlacImage;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		File file = new File("C:/Users/CRS/Desktop/ilacee.jpg");
 		Image image = new Image(file.getPath(), 160, 160, false, true);
-		shitIlaceImage.setImage(image);
+		regjistroIlacImage.setImage(image);
+		
 	}
-	@FXML
-	public void closePerditesoIlace() throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/shitIlace.fxml"));
-		Scene scene = new Scene(root);
-		Stage stage1 = new Stage();
-		stage1.setScene(scene);
-
-		Parent main = FXMLLoader.load(getClass().getResource("/fxml/______.fxml"));
-		Scene sceneMain = new Scene(main);
-		Stage stage = new Stage();
-
-		stage.setTitle("Sistemi i menaxhimit te farmacise");
-		stage.setScene(sceneMain);
-		stage.sizeToScene();
-		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.setOnCloseRequest(e -> Platform.exit());
-		stage.show();
-		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
-		stage1.close();
-	}
+//
+//	@FXML
+//	public void closeRegjistroIlace() throws IOException {
+//		Parent root = FXMLLoader.load(getClass().getResource("/fxml/regjistroIlac.fxml"));
+//		Scene scene = new Scene(root);
+//		Stage stage1 = new Stage();
+//		stage1.setScene(scene);
+//
+//		Parent main = FXMLLoader.load(getClass().getResource("/fxml/perditesoIlac.fxml"));
+//		Scene sceneMain = new Scene(main);
+//		Stage stage = new Stage();
+//
+//		stage.setTitle("Sistemi i menaxhimit te farmacise");
+//		stage.setScene(sceneMain);
+//		stage.sizeToScene();
+//		stage.initModality(Modality.APPLICATION_MODAL);
+//		stage.setOnCloseRequest(e -> Platform.exit());
+//		stage.show();
+//		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
+//		stage1.close();
+//	}
+	
 
 }

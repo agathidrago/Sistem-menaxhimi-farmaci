@@ -140,7 +140,5 @@ public class AdminController implements Initializable {
 			messageLabel.setText("Useri u krijua me sukses");
 			registerButton.setDisable(true);	
 		}
-		
-		
 	}
 }

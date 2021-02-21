@@ -3,6 +3,8 @@ package al.tetra.licence.controller;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,8 @@ import com.sun.glass.ui.MenuBar;
 import com.sun.glass.ui.MenuItem;
 import com.sun.glass.ui.View;
 
-import al.tetra.licence.entity.Perdorues;
+import al.tetra.licence.entity.Ilace;
+import al.tetra.licence.service.IlaceService;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,7 +44,9 @@ import net.rgielen.fxweaver.core.FxmlView;
 @Component
 @FxmlView("/fxml/perditesoIlac.fxml")
 
-public class PerditesoIlac implements Initializable{
+public class PerditesoIlacController implements Initializable{
+	@Autowired
+	private IlaceService ilaceService;
 	@FXML
 	private MenuBar perditesoIlacMenuBar;
     @FXML
@@ -106,6 +111,8 @@ public class PerditesoIlac implements Initializable{
     private Button ruajButton;
     @FXML
     private ImageView perditesoIlaceImage;
+    @FXML
+    private Label messageLabel;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		File file = new File("C:/Users/CRS/Desktop/ilacee.jpg");
@@ -113,23 +120,66 @@ public class PerditesoIlac implements Initializable{
 		perditesoIlaceImage.setImage(image);
 	}
 	@FXML
-	public void closePerditesoIlace() throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("/fxml/perditesoIlac.fxml"));
-		Scene scene = new Scene(root);
-		Stage stage1 = new Stage();
-		stage1.setScene(scene);
-
-		Parent main = FXMLLoader.load(getClass().getResource("/fxml/______.fxml"));
-		Scene sceneMain = new Scene(main);
-		Stage stage = new Stage();
-
-		stage.setTitle("Sistemi i menaxhimit te farmacise");
-		stage.setScene(sceneMain);
-		stage.sizeToScene();
-		stage.initModality(Modality.APPLICATION_MODAL);
-		stage.setOnCloseRequest(e -> Platform.exit());
-		stage.show();
-		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
-		stage1.close();
+	public void shtoIlace(ActionEvent event) {
+		RadioButton selected=null;
+		if(poButton.isSelected()) {
+			selected=poButton;
+		}else {
+			selected=joButton;
+		}
+		Ilace i= ilaceService.shtoIlac( Double.parseDouble(cmimiTextField1.getText()), data.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), 
+				emriTextField.getText(),Double.parseDouble(madhesiaTextField.getText()), 
+				Double.parseDouble(sasiaTextField.getText()), selected.getText(), messageLabel);
+		if(i!=null) {
+			messageLabel.setText("Ilaci u ruajt me sukses");
+			ruajButton.setDisable(true);	
+		}
 	}
+	@FXML
+	public void kerkoIlac(ActionEvent e) {
+		Ilace i = ilaceService.kerkoIlacSipasEmrit(emriTextField.getText());
+		if(i!=null) {
+			messageLabel.setText("Kerkimi me sukses!");
+			searchButton.setDisable(true);
+		}
+	}
+	@FXML
+	public void fshiIlace(ActionEvent e) {
+		System.err.println("hyri");
+		RadioButton selected=null;
+		if(poButton.isSelected()) {
+			selected=poButton;
+		}else {
+			selected=joButton;
+		}
+		Ilace i= ilaceService.fshiIlace( Double.parseDouble(cmimiTextField1.getText()), data.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), 
+				emriTextField.getText(),Double.parseDouble(madhesiaTextField.getText()), 
+				Double.parseDouble(sasiaTextField.getText()), selected.getText(), messageLabel);
+		if(i!=null) {
+			messageLabel.setText("Ilaci u fshi!");
+			fshiButton.setDisable(true);	
+		}
+	}
+	
+//
+//	@FXML
+//	public void closePerditesoIlace() throws IOException {
+//		Parent root = FXMLLoader.load(getClass().getResource("/fxml/perditesoIlac.fxml"));
+//		Scene scene = new Scene(root);
+//		Stage stage1 = new Stage();
+//		stage1.setScene(scene);
+//
+//		Parent main = FXMLLoader.load(getClass().getResource("/fxml/______.fxml"));
+//		Scene sceneMain = new Scene(main);
+//		Stage stage = new Stage();
+//
+//		stage.setTitle("Sistemi i menaxhimit te farmacise");
+//		stage.setScene(sceneMain);
+//		stage.sizeToScene();
+//		stage.initModality(Modality.APPLICATION_MODAL);
+//		stage.setOnCloseRequest(e -> Platform.exit());
+//		stage.show();
+//		scene.getWindow().fireEvent(new WindowEvent(scene.getWindow(), WindowEvent.WINDOW_CLOSE_REQUEST));
+//		stage1.close();
+//	}
 }
