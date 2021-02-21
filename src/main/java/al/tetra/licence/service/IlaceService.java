@@ -45,7 +45,7 @@ public class IlaceService {
 	}
 
 //per fshiIlac butonin
-	public Ilace fshiIlace(double cmimShitje, DatePicker data, String emer,
+	public Ilace fshiIlace(double cmimShitje, String data, String emer,
 			double madhesia, double sasia, String vetemMeRecete, Label messageLabel) {
 		try {
 			Ilace i = entityManager.createQuery("delete from Ilace i where i.emer=:emer and i.cmimShitje=:cmimShitje"
@@ -59,7 +59,7 @@ public class IlaceService {
 	}
 
 	// kur ruajme nje ilac te ri tek perditeso ilac
-	public Ilace shtoIlac(double cmimShitje, Date data, String emer,
+	public Ilace shtoIlac(double cmimShitje, String data, String emer,
 			double madhesia, double sasia, String vetemMeRecete, Label messageLabel) {
 		Ilace i = new Ilace();
 		try {

@@ -30,7 +30,7 @@ public class Ilace {
 	private double cmimBlerje;
 	@Column(name = "cmim_shitje")
 	private double cmimShitje;
-	private Date date_furnizimi;
+	private String date_furnizimi;
 	private double madhesia;
 	@Column(name = "vetem_me_recete")
 	private boolean vetemMeRecete;
@@ -85,11 +85,11 @@ public class Ilace {
 		this.cmimShitje = cmimShitje;
 	}
 
-	public Date getDate_furnizimi() {
+	public String getDate_furnizimi() {
 		return date_furnizimi;
 	}
 
-	public void setDate_furnizimi(Date date_furnizimi) {
+	public void setDate_furnizimi(String date_furnizimi) {
 		this.date_furnizimi = date_furnizimi;
 	}
 
