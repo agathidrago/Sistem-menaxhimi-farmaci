@@ -21,6 +21,7 @@ import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.entity.Recete;
 import al.tetra.licence.entity.ReceteIlac;
 import al.tetra.licence.entity.Semundje;
+import al.tetra.licence.entity.SemundjeIlac;
 import al.tetra.licence.entity.SemundjePacient;
 import io.micrometer.core.instrument.util.StringUtils;
 import javafx.scene.control.Label;
@@ -76,6 +77,8 @@ public class MjekuService {
 				ki.setIlac(ilac.getId().intValue());
 				ki.setKartele(k.getId().intValue());
 				entityManager.persist(ki);
+				/*SemundjeIlac si= new SemundjeIlac();
+				si.setIlac(ilac.get);*/
 			}
 			String[] semundjet = semundje.split(",");
 			for (int i = 0; i < semundjet.length; i++) {
@@ -84,6 +87,10 @@ public class MjekuService {
 				ks.setSemundje(s.getId().intValue());
 				ks.setKartele(k.getId().intValue());
 				entityManager.persist(ks);
+				SemundjePacient sp=new SemundjePacient();
+				sp.setPacient(idPacienti.intValue());
+				sp.setSemundjeP(s.getId().intValue());
+				entityManager.persist(sp);
 			}
 
 			// r.setRecete(ri);

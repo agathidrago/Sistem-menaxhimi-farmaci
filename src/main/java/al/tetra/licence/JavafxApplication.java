@@ -39,7 +39,7 @@ public class JavafxApplication extends Application {
 	@Override
 	public void start(Stage stage) {
 		FxWeaver fxWeaver = context.getBean(FxWeaver.class);
-		Parent root = fxWeaver.loadView(LoginController.class);
+		Parent root = fxWeaver.loadView(mainController.class);
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css"); //(3)
 		stage.setTitle("Sistemi i menaxhimit te farmacise");
