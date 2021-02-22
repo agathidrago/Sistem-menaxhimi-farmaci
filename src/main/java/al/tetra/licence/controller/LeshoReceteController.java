@@ -8,10 +8,7 @@ import java.util.ResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sun.glass.ui.Menu;
-import com.sun.glass.ui.MenuBar;
-import com.sun.glass.ui.MenuItem;
-import com.sun.glass.ui.View;
+
 
 import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.entity.Recete;
@@ -26,6 +23,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -48,29 +48,38 @@ public class LeshoReceteController implements Initializable {
 	@Autowired
 	private MjekuService mjekuService;
 	@FXML
-	private Label faqeKryesoreMjekuLabel;
-	@FXML
-	private MenuBar menuLeshoRecete;
+	private MenuBar menuShtoKarteleTeRe;
 	@FXML
 	private Menu fileMenu;
 	@FXML
-	private MenuItem mbyllMenu;
+	private MenuItem mbyllMenuItem1;
 	@FXML
 	private Menu pacientMenu;
 	@FXML
-	private MenuItem regjistroPacientMenuItem;
+	private MenuItem regjistroPacientMenuItem1;
 	@FXML
-	private MenuItem shikoKarteleMenuItem;
+	private MenuItem shikoKarteleMenuItem2;
 	@FXML
-	private MenuItem shtoKarteleTeReMenuItem;
+	private MenuItem shtoKarteleTeReMenuItem3;
 	@FXML
 	private Menu receteMenu;
 	@FXML
-	private MenuItem leshoReceteMenuItem;
+	private MenuItem leshoReceteMenuItem1;
+	@FXML
+	private Menu ilacMenu;
+	@FXML
+	private MenuItem perditesoIlacMenuItem1;
+	@FXML
+	private MenuItem shitIlacMenuItem2;
 	@FXML
 	private Menu sherbimeMenu;
 	@FXML
-	private MenuItem editoPerdoruesMenuItem;
+	private MenuItem editoPerdoruesMenuItem1;
+	@FXML
+	private MenuItem shtoPerdoruesMenuItem2;
+	@FXML
+	private Label faqeKryesoreMjekuLabel;
+	
 	@FXML
 	private ImageView imageRecete;
 	@FXML

@@ -1,10 +1,12 @@
 package al.tetra.licence.controller;
 
 import javafx.fxml.FXML;
-
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -16,7 +18,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.security.NoSuchAlgorithmException;
+import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -24,8 +28,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import al.tetra.licence.entity.Certificate;
+import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.CertificateService;
 import al.tetra.licence.service.LicenceService;
+import al.tetra.licence.service.PerdoruesService;
 import javafx.event.ActionEvent;
 
 import javafx.scene.control.MenuItem;
@@ -33,25 +39,61 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Label;
 
 import javafx.scene.control.PasswordField;
-
+import javafx.scene.control.RadioButton;
 import javafx.scene.input.MouseEvent;
 
 import javafx.scene.control.Menu;
-
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuButton;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Component
-@FxmlView("/fxml/main.fxml")
-public class mainController {
+@FxmlView("/fxml/mainFxml.fxml")
+public class mainController implements Initializable {
 
 	@Autowired
 	private LicenceService licenceService;
+	@Autowired
+	private PerdoruesService perdoruesService;
 
 	@FXML
-	private Menu file;
+	private MenuBar menuShtoKarteleTeRe;
+	@FXML
+	private Menu fileMenu;
+	@FXML
+	private MenuItem mbyllMenuItem1;
+	@FXML
+	private Menu pacientMenu;
+	@FXML
+	private MenuItem regjistroPacientMenuItem1;
+	@FXML
+	private MenuItem shikoKarteleMenuItem2;
+	@FXML
+	private MenuItem shtoKarteleTeReMenuItem3;
+	@FXML
+	private Menu receteMenu;
+	@FXML
+	private MenuItem leshoReceteMenuItem1;
+	@FXML
+	private Menu ilacMenu;
+	@FXML
+	private MenuItem perditesoIlacMenuItem1;
+	@FXML
+	private MenuItem shitIlacMenuItem2;
+	@FXML
+	private Menu sherbimeMenu;
+	@FXML
+	private MenuItem editoPerdoruesMenuItem1;
+	@FXML
+	private MenuItem shtoPerdoruesMenuItem2;
+	@FXML
+	private MenuButton adminMenuButton;
+	@FXML
+	private MenuItem mbyllMenuItem;
 	@FXML
 	private MenuItem quit;
 	@FXML
@@ -65,6 +107,22 @@ public class mainController {
 	@FXML
 	private Pane container;
 	@FXML
+	private Pane editPerdoruesPane;
+	@FXML
+	private Pane leshoRecetePane1;
+	@FXML
+	private Pane perditesoIlacePane;
+	@FXML
+	private Pane shikoKartelePane1;
+	@FXML
+	private Pane shitIlacePane;
+	@FXML
+	private Pane shtoKarteleTeRePane;
+	@FXML
+	private Pane shtoPacient;
+	@FXML
+	private Pane adminPane;
+	@FXML
 	private Pane generateCertificatePane;
 	@FXML
 	private Pane generateLicencePane;
@@ -73,46 +131,59 @@ public class mainController {
 	@FXML
 	private Pane modifikoPerdoruesPane;
 	@FXML
-	private Button generate;
+	private Label firstNameLabel;
 	@FXML
-	private Button validate;
+	private TextField emerTextField;
 	@FXML
-	private Button okid;
+	private Label lastNameLabel;
 	@FXML
-	private TextField tf1;
+	private TextField mbiemerTextField;
 	@FXML
-	private TextField tf2;
+	private Label mobileLabel;
 	@FXML
-	private Label l1;
+	private TextField telefonTextField;
 	@FXML
-	private Label l2;
+	private Label emailLabel;
 	@FXML
-	private Label l3;
+	private TextField emailTextField;
 	@FXML
-	private Label typeOfAction;
+	private Label addressLabel;
 	@FXML
-	private Button copy;
+	private TextField addressTextField;
 	@FXML
-	private Pane validateCertificatePane;
+	private Label genderLabel;
 	@FXML
-	private Button validate_certificate;
+	private RadioButton gjiniaMashkullRadioButton;
 	@FXML
-	private TextField cert_alias;
+	private RadioButton gjiniaFemerRadioButton;
 	@FXML
-	private PasswordField certKeyPass;
+	private Label usernameLabel;
+	@FXML
+	private TextField usernameTextField;
+	@FXML
+	private Label paswwordLabel;
+	@FXML
+	private PasswordField passwordField;
+	@FXML
+	private Label confirmPaswwordLabel;
+	@FXML
+	private Label messageLabel;
+	@FXML
+	private PasswordField confirmPasswordTextField;
+	@FXML
+	private TextField roliTextField;
+	@FXML
+	private Button registerButton;
+	@FXML
+	private ImageView imageAdmin;
 
-	@FXML
-	private Label l21;
-	@FXML
-	private Label l31;
-	@FXML
-	private PasswordField cert_pass;
-	@FXML
-	private Label typeOfAction1;
-	@FXML
-	private Button cert_upload;
-	@FXML
-	private Label message;
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		File file = new File("/images/doctor-clinic.jpg");
+		Image image = new Image(file.getPath(), 200, 160, false, true);
+		imageAdmin.setImage(image);
+
+	}
 
 	// Event Listener on MenuItem[#quit].onAction
 	@FXML
@@ -123,129 +194,117 @@ public class mainController {
 
 	// Event Listener on Label[#generateLicenceKeyTab].onMouseClicked
 	@FXML
-	public void openGenerateLicenceKeyPane(MouseEvent event) {
+	public void openEditPerdoruesPane(ActionEvent event) {
 		// TODO Autogenerated
-		generateCertificatePane.setVisible(false);
-		validateCertificatePane.setVisible(false);
-		generateLicencePane.setVisible(true);
-		generatePasswordPane.setVisible(false);
+		
+		leshoRecetePane1.setVisible(false);
+		perditesoIlacePane.setVisible(false);
+		shikoKartelePane1.setVisible(false);
+		shitIlacePane.setVisible(false);
+		shtoKarteleTeRePane.setVisible(false);
+		shtoPacient.setVisible(false);
+		adminPane.setVisible(false);
+		editPerdoruesPane.setVisible(true);
 	}
 
-	// Event Listener on Label[#validateCertificateTab].onMouseClicked
 	@FXML
-	public void openValidateCertificatePane(MouseEvent event) {
-		// TODO Autogenerated
-		validateCertificatePane.setVisible(true);
-		generateCertificatePane.setVisible(false);
-		generateLicencePane.setVisible(false);
-		generatePasswordPane.setVisible(false);
+	public void openShtoPacient(ActionEvent event) {
+		
+		shitIlacePane.setVisible(false);
+		editPerdoruesPane.setVisible(false);
+		leshoRecetePane1.setVisible(false);
+		shtoKarteleTeRePane.setVisible(false);
+		shikoKartelePane1.setVisible(false);
+		adminPane.setVisible(false);
+		shtoPacient.setVisible(true);
 		
 	}
-	
+
 	@FXML
-	public void openGenerateCertificatePane(MouseEvent event) {
-		// TODO Autogenerated
-		validateCertificatePane.setVisible(false);
-		generateCertificatePane.setVisible(true);
-		generateLicencePane.setVisible(false);
-		generatePasswordPane.setVisible(false);
-	}
-	
-	@FXML
-	public void openGeneratePasswordPane(MouseEvent event) {
-		// TODO Autogenerated
-		validateCertificatePane.setVisible(false);
-		generateCertificatePane.setVisible(false);
-		generateLicencePane.setVisible(false);
-		generatePasswordPane.setVisible(true);
+	public void openShtoKarteleTeRe(ActionEvent event) {
+		editPerdoruesPane.setVisible(false);
+		shtoPacient.setVisible(false);
+		shitIlacePane.setVisible(false);
+		shikoKartelePane1.setVisible(false);
+		leshoRecetePane1.setVisible(false);
+		adminPane.setVisible(false);
+		shtoKarteleTeRePane.setVisible(true);
+		
 	}
 
-	// Event Listener on Button[#generate].onAction
 	@FXML
-	public void generateLicenceKey(ActionEvent event) {
-		// TODO Autogenerated
-		typeOfAction.setText("Generate");
-		tf1.setText("");
-		tf2.setText("");
-		tf2.setEditable(false);
-		copy.setVisible(false);
+	public void openShitIlace(ActionEvent event) {
+		editPerdoruesPane.setVisible(false);
+		shitIlacePane.setVisible(true);
+		shtoPacient.setVisible(false);
+		leshoRecetePane1.setVisible(false);
+		adminPane.setVisible(false);
+		shtoKarteleTeRePane.setVisible(false);
 	}
 
-	// Event Listener on Button[#validate].onAction
 	@FXML
-	public void validateLicenceKey(ActionEvent event) {
-		// TODO Autogenerated
-		typeOfAction.setText("Validate");
-		tf1.setText("");
-		tf2.setText("");
-		tf2.setEditable(true);
-		copy.setVisible(false);
+	public void openPerditesoIlac(ActionEvent event) {
+		shitIlacePane.setVisible(false);
+		editPerdoruesPane.setVisible(false);
+		shtoPacient.setVisible(false);
+		shtoKarteleTeRePane.setVisible(false);
+		shikoKartelePane1.setVisible(false);
+		leshoRecetePane1.setVisible(false);
+		adminPane.setVisible(false);
+		perditesoIlacePane.setVisible(true);
+	}
+	@FXML
+	public void openShikoKartele(ActionEvent event) {
+		shitIlacePane.setVisible(false);
+		editPerdoruesPane.setVisible(false);
+		shtoPacient.setVisible(false);
+		shtoKarteleTeRePane.setVisible(false);
+		perditesoIlacePane.setVisible(false);
+		leshoRecetePane1.setVisible(false);
+		adminPane.setVisible(false);
+		shikoKartelePane1.setVisible(true);
+		
+	}
+	@FXML
+	public void openLeshoRecete(ActionEvent event) {
+		shitIlacePane.setVisible(false);
+		editPerdoruesPane.setVisible(false);
+		shtoPacient.setVisible(false);
+		shtoKarteleTeRePane.setVisible(false);
+		perditesoIlacePane.setVisible(false);
+		shikoKartelePane1.setVisible(false);
+		adminPane.setVisible(false);
+		leshoRecetePane1.setVisible(true);
+	}
+	@FXML
+	public void openShtoPerdorues(ActionEvent event) {
+		shitIlacePane.setVisible(false);
+		editPerdoruesPane.setVisible(false);
+		shtoPacient.setVisible(false);
+		shtoKarteleTeRePane.setVisible(false);
+		perditesoIlacePane.setVisible(false);
+		shikoKartelePane1.setVisible(false);
+		leshoRecetePane1.setVisible(false);
+		adminPane.setVisible(true);
 	}
 
-	// Event Listener on Button[#okid].onAction
 	@FXML
-	public void generateOrValidateLicenceKey(ActionEvent event) {
-		// TODO Autogenerated
-		switch (typeOfAction.getText()) {
-		case "Generate":
-			try {
-				System.out.println("sgjsg" + event);
-
-				String serialNumberEncodedSpecific = licenceService.separateHash(tf1.getText());
-
-				System.out.println("serialNumber encoded: " + serialNumberEncodedSpecific);
-				copy.setVisible(true);
-				l1.setVisible(true);
-				l2.setVisible(false);
-				l3.setVisible(false);
-				tf2.setText(serialNumberEncodedSpecific);
-
-			} catch (Exception e) {
-
-				e.printStackTrace();
-			}
-			break;
-		case "Validate":
-			try {
-
-				// String serialNumber = "PGUKD0BCYB25MZ";
-
-				String serialNumberEncodedSpecific = licenceService.separateHash(tf1.getText());
-
-				System.out.println("serialNumber encoded: " + serialNumberEncodedSpecific);
-
-				String serialNumberCalc = tf2.getText();
-
-				System.out.println(" serialNumberCalc: " + serialNumberCalc);
-
-				l1.setVisible(false);
-				if (serialNumberEncodedSpecific.equals(serialNumberCalc)) {
-					System.out.println("EQUALS");
-					l2.setVisible(true);
-					l3.setVisible(false);
-				} else {
-					l2.setVisible(false);
-					l3.setVisible(true);
-				}
-
-			} catch (Exception e) {
-
-				e.printStackTrace();
-			}
-			break;
+	public void shtoPerdorues(ActionEvent event) {
+		RadioButton selected = null;
+		if (gjiniaFemerRadioButton.isSelected()) {
+			selected = gjiniaFemerRadioButton;
+		} else {
+			selected = gjiniaMashkullRadioButton;
 		}
-	}
+		Perdorues p = perdoruesService.shtoPerdoruesTeRi(emerTextField.getText(), mbiemerTextField.getText(),
+				roliTextField.getText(), telefonTextField.getText(), emailTextField.getText(),
+				addressTextField.getText(), selected.getText(), usernameTextField.getText(), passwordField.getText(),
+				confirmPasswordTextField.getText(), messageLabel);
+		if (p != null) {
+			messageLabel.setText("Useri u krijua me sukses");
+			registerButton.setDisable(true);
+		}
 
-	// Event Listener on Button[#copy].onAction
-	@FXML
-	public void copyLicenceKey(ActionEvent event) {
-		String myString = tf2.getText();
-		//System.err.println("text:: " + myString);
-
-		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		Clipboard clipboard = toolkit.getSystemClipboard();
-		StringSelection strSel = new StringSelection(myString);
-		clipboard.setContents(strSel, null);
 	}
 
 }

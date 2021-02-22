@@ -2,104 +2,73 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.controller.shikoKarteleController">
+<Pane fx:id="shikoKartelePane1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #c9ebf5;" visible="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.controller.ShikoKarteleController">
    <children>
-      <MenuBar id="menuShikoKartele" fx:id="menuShikoKartele">
-        <menus>
-          <Menu id="fileMenu" fx:id="fileMenu" mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem fx:id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
-            </items>
-          </Menu>
-          <Menu id="pacientMenu" fx:id="pacientMenu" mnemonicParsing="false" text="Pacient">
-            <items>
-              <MenuItem id="regjistroPacientMenuItem" fx:id="regjistroPacientMenuItem" mnemonicParsing="false" text="Regjistro Pacient" />
-                  <MenuItem id="shtoKarteleMenuItem" fx:id="shtoKarteleMenuItem" mnemonicParsing="false" text="Shto kartele" />
-                  <MenuItem id="shtoKarteleTeReMenuItem" fx:id="shtoKarteleTereMenuItem" mnemonicParsing="false" text="Shto kartele te re" />
-            </items>
-          </Menu>
-            <Menu id="receteMenu" fx:id="receteMenu" mnemonicParsing="false" text="Recete">
-               <items>
-                  <MenuItem id="leshoReceteMenuItem" fx:id="leshoreceteMenuItem" mnemonicParsing="false" text="Lesho recete" />
-               </items>
-            </Menu>
-            <Menu id="sherbimeMenu" fx:id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
-               <items>
-                  <MenuItem id="editoPerdoruesMenuItem" fx:id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-      <ImageView id="imageShikoKartele" fx:id="imageShikoKartele" fitHeight="122.0" fitWidth="218.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@doctor-clinic.jpg" />
-         </image>
-         <effect>
-            <DropShadow />
-         </effect>
-      </ImageView>
-      <Pane id="shikoKartele" fx:id="shikoKartelePane" prefHeight="262.0" prefWidth="600.0">
+      <Pane id="shikoKartele" fx:id="shikoKartelePane" layoutY="138.0" prefHeight="262.0" prefWidth="600.0">
          <children>
             <Label id="shikoKarteleLabel" fx:id="shikoKarteleLabel" layoutX="310.0" layoutY="-101.0" prefHeight="96.0" prefWidth="193.0" text="Shiko Kartele">
                <font>
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <Label id="emriIPacientitLabel" fx:id="emriIPacientitLabel" layoutX="39.0" layoutY="131.0" text="Emri i Pacientit">
+            <Label id="emriIPacientitLabel" fx:id="emriIPacientitLabel" layoutX="33.0" layoutY="88.0" text="Emri i Pacientit">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label id="moshaLabel" fx:id="moshaLabel" layoutX="39.0" layoutY="162.0" text="Mosha">
+            <Label id="moshaLabel" fx:id="moshaLabel" layoutX="33.0" layoutY="117.0" prefHeight="19.0" prefWidth="61.0" text="Mosha">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Button id="serachButton" fx:id="serachButton" layoutX="370.0" layoutY="34.0" mnemonicParsing="false" text="Search">
+            <Button id="serachButton" fx:id="serachButton" layoutX="370.0" layoutY="15.0" mnemonicParsing="false" onAction="#searchShikoKartele" prefHeight="19.0" prefWidth="74.0" text="Search">
                <font>
-                  <Font size="17.0" />
+                  <Font size="11.0" />
                </font>
             </Button>
-<<<<<<< HEAD
-            <Label id="teDhenatEKartelesSePacientitLabel" fx:id="teDhenatEKartelesSePacientitLabel" layoutX="32.0" layoutY="84.0" style="-fx-background-color: #FFE4C4;" text="Te dhenat e karteles se pacientit">
-=======
-            <Label id="teDhenatEKartelesSePacientitLabel" fx:id="teDhenatEKartelesSePacientitLabel" layoutX="40.0" layoutY="81.0" style="-fx-background-color: #FFE4C4;" text="Te dhenat e karteles se pacientit">
->>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
+            <Label id="teDhenatEKartelesSePacientitLabel" fx:id="teDhenatEKartelesSePacientitLabel" contentDisplay="CENTER" layoutX="39.0" layoutY="50.0" prefHeight="25.0" prefWidth="291.0" style="-fx-background-color: #FFE4C4;" text="Te dhenat e karteles se pacientit">
                <font>
                   <Font name="System Bold Italic" size="16.0" />
                </font>
             </Label>
-            <Label id="ilaceLabel" fx:id="ilaceLabel" layoutX="39.0" layoutY="228.0" text="Ilace">
+            <Label id="ilaceLabel" fx:id="ilaceLabel" layoutX="33.0" layoutY="206.0" prefHeight="19.0" prefWidth="61.0" text="Ilace">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label id="semundjeLabel" fx:id="semundjeLabel" layoutX="39.0" layoutY="196.0" text="Semundje">
+            <Label id="semundjeLabel" fx:id="semundjeLabel" layoutX="33.0" layoutY="152.0" text="Semundje">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Button id="shtoKarteleButton" fx:id="shtoKarteleButton" layoutX="444.0" layoutY="193.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="129.0" text="Shto Kartele">
+            <TextField id="emriPacientitTextField" fx:id="emriPacientitTextField" layoutX="161.0" layoutY="85.0" prefHeight="25.0" prefWidth="170.0" promptText="Emri i pacientit" />
+            <TextField id="moshaTextField" fx:id="moshaTextField" layoutX="161.0" layoutY="114.0" prefHeight="25.0" prefWidth="170.0" promptText="Mosha" />
+            <TextArea fx:id="semundjeTextField" layoutX="161.0" layoutY="144.0" prefHeight="53.0" prefWidth="170.0" promptText="Semundje" />
+            <TextArea fx:id="ilaceTextField" layoutX="163.0" layoutY="206.0" prefHeight="38.0" prefWidth="170.0" promptText="Ilace" />
+            <Label layoutX="333.0" layoutY="152.0" prefHeight="19.0" prefWidth="262.0" text="Kujdes ! Semundjet duhet te ndahen me ',' !" textFill="#f20606" underline="true">
                <font>
-                  <Font size="14.0" />
-               </font></Button>
-            <TextField id="pacientiTextField" fx:id="pacientiTextField" layoutX="181.0" layoutY="37.0" prefHeight="31.0" prefWidth="157.0" promptText="Emri i pacientit" />
-            <TextField id="emriPacientitTextField" fx:id="emriPacientitTextField" layoutX="161.0" layoutY="128.0" prefHeight="25.0" prefWidth="170.0" />
-            <TextField id="moshaTextField" fx:id="moshaTextField" layoutX="161.0" layoutY="159.0" prefHeight="25.0" prefWidth="170.0" />
-            <TextField id="semundjeTextField" fx:id="semundjeTextField" layoutX="161.0" layoutY="193.0" prefHeight="25.0" prefWidth="170.0" />
-            <TextField id="ilaceTextField" fx:id="ilaceTextField" layoutX="161.0" layoutY="225.0" prefHeight="25.0" prefWidth="170.0" />
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="messageLabel" layoutX="335.0" layoutY="51.0" prefHeight="24.0" prefWidth="246.0" textFill="#f20303">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <TextField id="pacientiTextField" fx:id="pacientiTextField" layoutX="161.0" layoutY="18.0" prefHeight="25.0" prefWidth="170.0" promptText="Emri i pacientit" />
          </children>
       </Pane>
+      <ImageView fx:id="imageShikoKartele" fitHeight="144.0" fitWidth="200.0" layoutX="3.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/doctor-clinic.jpg" />
+         </image>
+      </ImageView>
    </children>
-</VBox>
+</Pane>

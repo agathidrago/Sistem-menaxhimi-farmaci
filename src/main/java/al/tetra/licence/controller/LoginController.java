@@ -102,8 +102,9 @@ public class LoginController implements Initializable {
 		stage1.setScene(scene);*/
 		stage1=(Stage)autentifikohuButton.getScene().getWindow();
 		stage1.close();
+		
 
-		Parent main = FXMLLoader.load(getClass().getResource("/fxml/editPerdorues.fxml"));
+		Parent main = FXMLLoader.load(getClass().getResource("/fxml/mainFxml.fxml"));
 		Scene sceneMain = new Scene(main);
 		Stage stage = new Stage();
 		

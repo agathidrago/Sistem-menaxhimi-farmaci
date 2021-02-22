@@ -16,8 +16,13 @@ import org.springframework.context.ConfigurableApplicationContext;
 import al.tetra.licence.controller.AdminController;
 import al.tetra.licence.controller.LeshoReceteController;
 import al.tetra.licence.controller.LoginController;
+import al.tetra.licence.controller.PacientController;
+import al.tetra.licence.controller.PerditesoIlac;
 import al.tetra.licence.controller.PerdoruesController;
+import al.tetra.licence.controller.ShikoKarteleController;
+import al.tetra.licence.controller.ShitIlac;
 import al.tetra.licence.controller.ShtoKarteleTeReController;
+import al.tetra.licence.controller.mainController;
 
 
 public class JavafxApplication extends Application {
@@ -34,7 +39,7 @@ public class JavafxApplication extends Application {
 	@Override
 	public void start(Stage stage) {
 		FxWeaver fxWeaver = context.getBean(FxWeaver.class);
-		Parent root = fxWeaver.loadView(PerdoruesController.class);
+		Parent root = fxWeaver.loadView(LoginController.class);
 		Scene scene = new Scene(root);
 		scene.getStylesheets().add("org/kordamp/bootstrapfx/bootstrapfx.css"); //(3)
 		stage.setTitle("Sistemi i menaxhimit te farmacise");

@@ -42,29 +42,35 @@ import net.rgielen.fxweaver.core.FxmlView;
 @FxmlView("/fxml/regjistroIlac.fxml")
 public class RegjistroIlac implements Initializable{
 	@FXML
-	private MenuBar regjistroIlacMenuBar;
+	private MenuBar menuShtoKarteleTeRe;
 	@FXML
 	private Menu fileMenu;
 	@FXML
-	private MenuItem mbyllMenuItem;
+	private MenuItem mbyllMenuItem1;
 	@FXML
-	private Menu ilaceMenu;
+	private Menu pacientMenu;
 	@FXML
-	private MenuItem regjistroIlacMenuItem;
+	private MenuItem regjistroPacientMenuItem1;
 	@FXML
-	private MenuItem perditesoIlacMenuItem;
+	private MenuItem shikoKarteleMenuItem2;
 	@FXML
-	private MenuItem shitIlacMenuItem;
+	private MenuItem shtoKarteleTeReMenuItem3;
 	@FXML
-	private Menu recetaMenu;
+	private Menu receteMenu;
 	@FXML
-	private MenuItem shikoReceteMenuItem;
+	private MenuItem leshoReceteMenuItem1;
+	@FXML
+	private Menu ilacMenu;
+	@FXML
+	private MenuItem perditesoIlacMenuItem1;
+	@FXML
+	private MenuItem shitIlacMenuItem2;
 	@FXML
 	private Menu sherbimeMenu;
 	@FXML
-	private MenuItem editoPerdoruesMenuItem;
+	private MenuItem editoPerdoruesMenuItem1;
 	@FXML
-	private MenuItem shtoPerdoruesMenuItem;
+	private MenuItem shtoPerdoruesMenuItem2;
 	@FXML
 	private Pane regjistroIlacPane;
 	@FXML

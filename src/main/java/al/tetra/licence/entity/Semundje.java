@@ -24,7 +24,7 @@ public class Semundje {
 
 	private String emer;
 	private String stadi;
-	private int pacienti;
+
 
 	public Long getId() {
 		return id;
@@ -50,17 +50,11 @@ public class Semundje {
 		this.stadi = stadi;
 	}
 
-	public int getPacienti() {
-		return pacienti;
-	}
 
-	public void setPacienti(int pacienti) {
-		this.pacienti = pacienti;
-	}
 
 	@Override
 	public String toString() {
-		return "Semundje [id=" + id + ", emer=" + emer + ", stadi=" + stadi + ", pacienti=" + pacienti + "]";
+		return "Semundje [id=" + id + ", emer=" + emer + ", stadi=" + stadi + ", pacienti="  + "]";
 	}
 	
 

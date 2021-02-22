@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -38,12 +39,42 @@ import net.rgielen.fxweaver.core.FxWeaver;
 import net.rgielen.fxweaver.core.FxmlView;
 
 @Component
-@FxmlView("/fxml/admin.fxml")
+@FxmlView("/fxml/adminPane.fxml")
 public class AdminController implements Initializable {
 	@Autowired
 	private PerdoruesService perdoruesService;
 	@FXML
 	private Pane adminPane;
+	@FXML
+	private MenuBar menuShtoKarteleTeRe;
+	@FXML
+	private Menu fileMenu;
+	@FXML
+	private MenuItem mbyllMenuItem1;
+	@FXML
+	private Menu pacientMenu;
+	@FXML
+	private MenuItem regjistroPacientMenuItem1;
+	@FXML
+	private MenuItem shikoKarteleMenuItem2;
+	@FXML
+	private MenuItem shtoKarteleTeReMenuItem3;
+	@FXML
+	private Menu receteMenu;
+	@FXML
+	private MenuItem leshoReceteMenuItem1;
+	@FXML
+	private Menu ilacMenu;
+	@FXML
+	private MenuItem perditesoIlacMenuItem1;
+	@FXML
+	private MenuItem shitIlacMenuItem2;
+	@FXML
+	private Menu sherbimeMenu;
+	@FXML
+	private MenuItem editoPerdoruesMenuItem1;
+	@FXML
+	private MenuItem shtoPerdoruesMenuItem2;
 	@FXML
 	private MenuButton adminMenuButton;
 	@FXML
@@ -128,7 +159,6 @@ public class AdminController implements Initializable {
 	
 	@FXML
 	public void shtoPerdorues(ActionEvent event) {
-		System.err.println("hyri");
 		RadioButton selected=null;
 		if(gjiniaFemerRadioButton.isSelected()) {
 			selected=gjiniaFemerRadioButton;

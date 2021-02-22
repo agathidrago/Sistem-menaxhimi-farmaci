@@ -1,49 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="perditesoIlacePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.controller.PerditesoIlac">
    <children>
-      <MenuBar fx:id="perditesoIlacMenuBar">
-        <menus>
-          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem fx:id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
-            </items>
-          </Menu>
-          <Menu fx:id="ilaceMenu" mnemonicParsing="false" text="Ilace">
-            <items>
-              <MenuItem fx:id="regjistroIlacMenuItem" mnemonicParsing="false" text="Regjistro ilac" />
-                  <MenuItem fx:id="perditesoIlacMenuItem" mnemonicParsing="false" text="Perditeso ilac" />
-                  <MenuItem fx:id="shitIlacMenuItem" mnemonicParsing="false" text="Shit ilac" />
-            </items>
-          </Menu>
-          <Menu fx:id="recetaMenu" mnemonicParsing="false" text="Receta">
-            <items>
-              <MenuItem fx:id="shikoReceteMenuItem" mnemonicParsing="false" text="Shiko recete" />
-            </items>
-          </Menu>
-            <Menu fx:id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
-               <items>
-                  <MenuItem fx:id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
-                  <MenuItem fx:id="shtoPerdoruesMenuItem" mnemonicParsing="false" text="Shto perdorues" />
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-      <Pane fx:id="perditesoIlacePane" prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;">
+      <Pane fx:id="perditesoIlacePane1" layoutY="-2.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;">
          <children>
             <Label fx:id="perditesoIlaceLabel" layoutX="213.0" layoutY="38.0" text="Perditeso Ilace">
                <font>
@@ -55,60 +24,71 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="kerkoIlacTextField" layoutX="161.0" layoutY="87.0" promptText="Kerko ilac" />
-            <TextField fx:id="emriTextField" layoutX="161.0" layoutY="131.0" promptText="emri" />
-            <TextField fx:id="sasiaTextField" layoutX="161.0" layoutY="166.0" promptText="sasia" />
             <Label fx:id="sasiaLabel" layoutX="35.0" layoutY="169.0" text="Sasia" textFill="#1660c9">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="madhesiaTextField" layoutX="161.0" layoutY="200.0" promptText="madhesia" />
             <Label fx:id="madhesiaLabel" layoutX="34.0" layoutY="203.0" text="Madhesia" textFill="#1660c9">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="meReceteLabel" layoutX="35.0" layoutY="322.0" text="Me recete" textFill="#1660c9">
+            <Label fx:id="meReceteLabel" layoutX="33.0" layoutY="338.0" text="Me recete" textFill="#1660c9">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <RadioButton fx:id="poButton" layoutX="161.0" layoutY="323.0" mnemonicParsing="false" text="Po" />
-            <RadioButton fx:id="joButton" layoutX="247.0" layoutY="323.0" mnemonicParsing="false" text="Jo" />
-            <Button fx:id="searchButton" layoutX="347.0" layoutY="85.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #ff4d4d;" text="Search">
+            <RadioButton fx:id="poButton" layoutX="160.0" layoutY="339.0" mnemonicParsing="false" text="Po" />
+            <RadioButton fx:id="joButton" layoutX="247.0" layoutY="339.0" mnemonicParsing="false" text="Jo" />
+            <Button fx:id="searchButton" layoutX="347.0" layoutY="85.0" mnemonicParsing="false" onAction="#searchIlace" prefHeight="17.0" prefWidth="76.0" text="Search">
                <font>
-                  <Font name="System Bold Italic" size="14.0" />
+                  <Font name="System Bold Italic" size="11.0" />
                </font>
             </Button>
-            <DatePicker fx:id="data" layoutX="160.0" layoutY="242.0" />
+            <DatePicker fx:id="data" layoutX="160.0" layoutY="242.0" promptText="Data e blerjes" />
             <Label fx:id="dateLabel" layoutX="36.0" layoutY="245.0" text="Data" textFill="#1660c9">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <Label fx:id="cmimiLabel" layoutX="36.0" layoutY="287.0" text="Cmimi" textFill="#1660c9">
+            <Label fx:id="cmimiLabel" layoutX="34.0" layoutY="275.0" text="Cmimi i shitjes" textFill="#1660c9">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </Label>
-            <TextField fx:id="cmimiTextField1" layoutX="161.0" layoutY="284.0" promptText="cmimi" />
-            <Button fx:id="fshiButton" layoutX="348.0" layoutY="308.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="69.0" style="-fx-background-color: #ff4d4d;" text="Fshi">
+            <Button fx:id="fshiButton" layoutX="481.0" layoutY="82.0" mnemonicParsing="false" onAction="#deleteIlac" prefHeight="17.0" prefWidth="69.0" style="-fx-background-color: #ff4d4d;" text="Fshi">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="12.0" />
                </font>
             </Button>
-            <Button fx:id="ruajButton" layoutX="477.0" layoutY="308.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #ff4d4d;" text="Ruaj">
+            <Button fx:id="ruajButton" layoutX="410.0" layoutY="335.0" mnemonicParsing="false" onAction="#updateIlac" prefHeight="17.0" prefWidth="76.0" style="-fx-background-color: #7fff00;" text="Ruaj">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="System Bold" size="12.0" />
                </font>
             </Button>
             <ImageView fx:id="perditesoIlaceImage" fitHeight="150.0" fitWidth="200.0" layoutX="348.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@ilacee.jpg" />
+                  <Image url="@../images/ilac.jpeg" />
                </image>
             </ImageView>
+            <Label fx:id="cmimiLabel1" layoutX="34.0" layoutY="308.0" text="Cmimi i blerjes" textFill="#1660c9">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="kerkoIlacTextField" layoutX="160.0" layoutY="85.0" promptText="Kerko ilac" />
+            <TextField fx:id="emriTextField" layoutX="160.0" layoutY="131.0" promptText="Emri i ilacit" />
+            <TextField fx:id="sasiaTextField" layoutX="160.0" layoutY="166.0" promptText="Sasia e produktit" />
+            <TextField fx:id="madhesiaTextField" layoutX="160.0" layoutY="201.0" promptText="Madhesia ne mg/ml" />
+            <TextField fx:id="cmimiTextField1" layoutX="160.0" layoutY="276.0" promptText="Cmimi i shitjes" />
+            <TextField fx:id="cmimiTextField11" layoutX="160.0" layoutY="308.0" promptText="Cmimi i blerjes" />
+            <Label fx:id="messageLabel" layoutX="328.0" layoutY="296.0" prefHeight="24.0" prefWidth="240.0" textFill="#fc0606">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
-</VBox>
+</Pane>

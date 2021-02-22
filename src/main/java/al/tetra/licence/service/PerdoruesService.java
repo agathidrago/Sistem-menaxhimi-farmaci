@@ -8,6 +8,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import al.tetra.licence.entity.Ilace;
+import al.tetra.licence.entity.Pacient;
 import al.tetra.licence.entity.Perdorues;
 import io.micrometer.core.instrument.util.StringUtils;
 import javafx.scene.control.Label;
@@ -19,7 +21,7 @@ public class PerdoruesService {
 	@PersistenceContext
 	private EntityManager entityManager;
 
-	public Perdorues updatePerdorues(String emer, String email, String username, Long id, Long loggedUser) {
+	public Perdorues updatePerdorues(String emer, String email, String username,String address, Long loggedUser) {
 		System.err.println("hyri 1");
 		Perdorues p = getPerodruesTeLoguar();
 		if (StringUtils.isBlank(emer))
@@ -28,6 +30,8 @@ public class PerdoruesService {
 			email = p.getEmail();
 		if (StringUtils.isBlank(username))
 			username = p.getUsername();
+		if (StringUtils.isBlank(address))
+			address = p.getAdresa();
 		System.err.println("Peroduresi" + p.toString());
 
 		try {
@@ -38,7 +42,8 @@ public class PerdoruesService {
 			p.setFjalekalim(p.getFjalekalim());
 			p.setRoli(p.getRoli());
 			p.setGjinia(p.getGjinia());
-			p.setId(id);
+			p.setId(p.getId());
+			p.setAdresa(address);
 			entityManager.persist(p);
 
 		} catch (Exception e) {
@@ -47,6 +52,28 @@ public class PerdoruesService {
 		return p;
 
 	}
+	public Perdorues updateFjalekalim(String newPass) {
+		
+		Perdorues p = getPerodruesTeLoguar();
+		try {
+
+			p.setEmer(p.getEmer());
+			p.setEmail(p.getEmail());
+			p.setUsername(p.getFjalekalim());
+			p.setFjalekalim(newPass);
+			p.setRoli(p.getRoli());
+			p.setGjinia(p.getGjinia());
+			p.setId(p.getId());
+			p.setAdresa(p.getAdresa());
+			entityManager.persist(p);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return p;
+
+	}
+
 
 	public Perdorues getPerodruesTeLoguar() {
 		try {
@@ -74,6 +101,7 @@ public class PerdoruesService {
 			return null;
 		}
 	}
+
 
 	public Perdorues shtoPerdoruesTeRi(String emer, String mbiemer, String roli, String numerTel, String email,
 			String address, String gjinia, String username, String password, String confirmPass, Label messageLabel) {

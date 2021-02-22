@@ -2,116 +2,53 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<<<<<<< HEAD
-=======
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
->>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="shitIlacePane" prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;" visible="false" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="al.tetra.licence.controller.ShitIlac">
    <children>
-      <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Mbyll" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Ilace">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Regjistro ilac" />
-                  <MenuItem mnemonicParsing="false" text="Perditeso ilac" />
-                  <MenuItem mnemonicParsing="false" text="Shit ilac" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Receta">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Shiko recete" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Sherbime">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Edito perdorues" />
-                  <MenuItem mnemonicParsing="false" text="Shto perdorues" />
-=======
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <MenuBar fx:id="shitIlaceMenuBar">
-        <menus>
-          <Menu fx:id="fileMenu" mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem fx:id="mbyllMenuItem" mnemonicParsing="false" text="Mbyll" />
-            </items>
-          </Menu>
-          <Menu fx:id="ilaceMenu" mnemonicParsing="false" text="Ilace">
-            <items>
-              <MenuItem fx:id="regjistroIlacMenuItem" mnemonicParsing="false" text="Regjistro ilac" />
-                  <MenuItem fx:id="perditesoIlacMenuItem" mnemonicParsing="false" text="Perditeso ilac" />
-                  <MenuItem fx:id="shitIlacMenuItem" mnemonicParsing="false" text="Shit ilac" />
-            </items>
-          </Menu>
-          <Menu fx:id="recetaMenu" mnemonicParsing="false" text="Receta">
-            <items>
-              <MenuItem fx:id="shikoReceteMenuItem" mnemonicParsing="false" text="Shiko recete" />
-            </items>
-          </Menu>
-            <Menu fx:id="sherbimeMenu" mnemonicParsing="false" text="Sherbime">
-               <items>
-                  <MenuItem fx:id="editoPerdoruesMenuItem" mnemonicParsing="false" text="Edito perdorues" />
-                  <MenuItem fx:id="shtoPerdoruesMenuItem" mnemonicParsing="false" text="Shto perdorues" />
->>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
-               </items>
-            </Menu>
-        </menus>
-      </MenuBar>
-<<<<<<< HEAD
-      <Pane prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;">
+      <Label fx:id="shitIlaceLabel" layoutX="91.0" layoutY="30.0" text="Shit  Ilace">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="meReceteLabel" layoutX="29.0" layoutY="82.0" text="Me recete" textFill="#1660c9">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="poRadioButton" layoutX="147.0" layoutY="83.0" mnemonicParsing="false" onAction="#poRecete" onKeyPressed="#poRecete" onTouchPressed="#poRecete" text="Po" />
+      <RadioButton fx:id="joRadioButton" layoutX="223.0" layoutY="83.0" mnemonicParsing="false" text="Jo" />
+      <TextField fx:id="kerkoIlacinTextField" layoutX="21.0" layoutY="151.0" prefHeight="25.0" prefWidth="152.0" promptText="kerko ilacin" />
+      <Button fx:id="shtoButton" layoutX="213.0" layoutY="151.0" mnemonicParsing="false" onAction="#kerkoIlac" text="Shto" />
+      <TextArea fx:id="ilecetListeField" layoutX="160.0" layoutY="187.0" prefHeight="71.0" prefWidth="159.0" promptText="Ilacet ne liste" />
+      <Pane fx:id="recetaPane" layoutX="336.0" prefHeight="375.0" prefWidth="264.0" style="-fx-background-color: #adffd8;" visible="false">
          <children>
-            <Label layoutX="213.0" layoutY="38.0" text="Shit  ilace">
-=======
-      <Pane fx:id="shitIlacePane" prefHeight="382.0" prefWidth="600.0" style="-fx-background-color: #c9ebf5;">
-         <children>
-            <Label fx:id="shitIlaceLabel" layoutX="213.0" layoutY="38.0" text="Shit  Ilace">
->>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
+            <Label layoutX="73.0" layoutY="30.0" prefHeight="27.0" prefWidth="134.0" text="Receta">
                <font>
                   <Font name="Arial Bold" size="24.0" />
                </font>
             </Label>
-<<<<<<< HEAD
-            <Label layoutX="42.0" layoutY="108.0" text="Me recete" textFill="#1660c9">
-=======
-            <Label fx:id="meReceteLabel" layoutX="42.0" layoutY="108.0" text="Me recete" textFill="#1660c9">
->>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
-<<<<<<< HEAD
-            <RadioButton fx:id="poTextField" layoutX="165.0" layoutY="109.0" mnemonicParsing="false" text="Po" />
-            <RadioButton layoutX="269.0" layoutY="109.0" mnemonicParsing="false" text="Jo" />
-            <TextField fx:id="kerkoIlacinTextField" layoutX="42.0" layoutY="163.0" promptText="kerko ilacin" />
-            <Button fx:id="shitButton" layoutX="221.0" layoutY="164.0" mnemonicParsing="false" text="Shit" />
-=======
-            <RadioButton fx:id="poRadioButton" layoutX="165.0" layoutY="109.0" mnemonicParsing="false" text="Po" />
-            <RadioButton fx:id="joRadioButton" layoutX="269.0" layoutY="109.0" mnemonicParsing="false" text="Jo" />
-            <TextField fx:id="kerkoIlacinTextField" layoutX="42.0" layoutY="163.0" promptText="kerko ilacin" />
-            <Button fx:id="shitButton" layoutX="221.0" layoutY="164.0" mnemonicParsing="false" text="Shit" />
-            <ImageView fx:id="shitIlaceImage" fitHeight="150.0" fitWidth="200.0" layoutX="344.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@ilacee.jpg" />
-               </image>
-            </ImageView>
->>>>>>> 48edbed569bd3d2d526aa02b974f8cfb91202539
+            <TextField fx:id="kerkoPacientField" layoutX="14.0" layoutY="80.0" promptText="Kerko pacient" />
+            <Button fx:id="kerkoButton" layoutX="184.0" layoutY="80.0" mnemonicParsing="false" onAction="#kerkoPacientRecete" text="Kerko" />
+            <TextField fx:id="emriPacientitField" layoutX="101.0" layoutY="124.0" promptText="Emri i pacientit" />
+            <TextField fx:id="dateLeshimiField" layoutX="101.0" layoutY="163.0" promptText="Date leshimi" />
+            <TextArea fx:id="ilacetRecetaField" layoutX="101.0" layoutY="243.0" prefHeight="59.0" prefWidth="149.0" promptText="Ilacet" />
+            <TextField fx:id="emriMjekutField" layoutX="101.0" layoutY="203.0" promptText="Emri i mjekut" />
+            <Label layoutX="14.0" layoutY="128.0" prefHeight="17.0" prefWidth="73.0" text="Emer pacieti" />
+            <Label layoutX="14.0" layoutY="167.0" prefHeight="17.0" prefWidth="73.0" text="Date leshimi" />
+            <Label layoutX="14.0" layoutY="207.0" prefHeight="17.0" prefWidth="61.0" text="Mjeku" />
+            <Label layoutX="14.0" layoutY="264.0" prefHeight="17.0" prefWidth="61.0" text="Ilace" />
          </children>
       </Pane>
+      <Label layoutX="22.0" layoutY="214.0" prefHeight="17.0" prefWidth="125.0" text="Ilacet ne liste" />
+      <TextField fx:id="totaliField" layoutX="160.0" layoutY="275.0" prefHeight="25.0" prefWidth="159.0" promptText="Totali gjithesej" />
+      <Label layoutX="15.0" layoutY="279.0" prefHeight="17.0" prefWidth="119.0" text="Totali per tu paguar" />
+      <Button fx:id="shitButton" layoutX="109.0" layoutY="325.0" mnemonicParsing="false" onAction="#shitIlac" prefHeight="25.0" prefWidth="73.0" text="Shit" />
+      <Button fx:id="fshiReceteField" layoutX="230.0" layoutY="325.0" mnemonicParsing="false" onAction="#fshiRecete" text="Fshi recete" />
+      <Label fx:id="messageLabel" layoutX="6.0" layoutY="110.0" prefHeight="25.0" prefWidth="314.0" textFill="#ee0a0a" />
    </children>
-</VBox>
+</Pane>

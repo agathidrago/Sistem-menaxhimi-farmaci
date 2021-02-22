@@ -11,6 +11,7 @@ import java.security.Principal;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.Enumeration;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -25,6 +26,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import al.tetra.licence.entity.PacientIlac;
 import al.tetra.licence.entity.Perdorues;
 import al.tetra.licence.service.PasswordService;
 import al.tetra.licence.service.PerdoruesService;
@@ -131,8 +133,9 @@ public class testt {
 
 	public void addUser() {
 		try {
-		Perdorues p=perdorues.updatePerdorues("agathulaaaaaaa", "", "111", new Long(1), new Long(1));
-		System.err.println(p.toString());
+			List<PacientIlac> pacientIlac=entityManager.createQuery("select p from PacientIlac p where pacient=:pacient",PacientIlac.class)
+					.setParameter("pacient", 1).getResultList();
+		System.err.println(pacientIlac.toString());
 		}catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();

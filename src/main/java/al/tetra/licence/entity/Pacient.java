@@ -31,10 +31,10 @@ public class Pacient {
 	private String gjinia;
 	private Date datelindja;
 	private String kontakt;
-	@JsonBackReference
+	/*@JsonBackReference
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "pacient", referencedColumnName = "id")
-	private SemundjePacient pacient;
+	private SemundjePacient pacient;*/
 	
 	public Long getId() {
 		return id;
@@ -79,16 +79,16 @@ public class Pacient {
 		this.kontakt = kontakt;
 	}
 	
-	public SemundjePacient getPacient() {
+/*	public SemundjePacient getPacient() {
 		return pacient;
 	}
 	public void setPacient(SemundjePacient pacient) {
 		this.pacient = pacient;
-	}
+	}*/
 	@Override
 	public String toString() {
 		return "Pacient [id=" + id + ", emer=" + emer + ", mosha=" + mosha + ", adresa=" + adresa + ", gjinia=" + gjinia
-				+ ", datelindja=" + datelindja + ", kontakt=" + kontakt + ", pacient=" + pacient + "]";
+				+ ", datelindja=" + datelindja + ", kontakt=" + kontakt +  "]";
 	}
 	
 	
